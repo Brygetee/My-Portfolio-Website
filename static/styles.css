@@ -1,0 +1,134 @@
+/*/*-----------------------------------------General Page Styles-----------------------------------------*/
+
+/*-----Fonts-----*/
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*-----Body Styles-----*/
+body{
+    background-image: url("pink_yarn.jpg");
+    background-size: cover;
+    font-family: "Jua";
+    color: #fb6f92;
+}
+
+/*-----Tab Styles & Folder Styles-----*/
+
+.folder-container {
+  max-width: 75vw;
+  margin: 50px auto;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: -1px; /* Overlap the content border */
+  justify-content: flex-end;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: 10px solid #fb6f92;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  margin-right: 5px;
+  z-index: 1;
+  font-family: "Jua";
+  font-size: 2rem;
+  color: #fb6f92;
+  background: white;
+}
+
+.tab.about {
+    background: #cfbaf0;
+    color: white;
+  z-index: 2; /* Ensures the active tab stays on top */
+}
+
+.tab.portfolio {
+    background: pink;
+    color: white;
+}
+.tab.contact{
+    background: #fb6f92;
+    color: white;
+}
+/*-----------------------------------------About Me page styles-----------------------------------------*/
+
+.content {
+  border: 15px solid #fb6f92;
+  padding: 20px;
+  border-radius: 8px 8px 8px 8px; /* Curve for the rest of the folder */
+  background: #ffe5ec;
+}
+
+/* About Section Styles*/
+.about_section{
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 20px;
+}
+.about_section.languages{
+     border: 15px dashed #fb6f92;
+}
+.about_section.programming_skills{
+    border: 15px dashed #cfbaf0;
+}
+
+.about_section.education{
+    border: 15px dashed pink;
+}
+
+#greeting{
+    display: inline-block;
+    text-align: right;
+}
+#cartoon{
+    height: 200px;
+    width: auto;
+    border: 15px dashed pink;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+
+h1.speech {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background-color: #fff;
+  border: 8px solid #666;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+}
+h1.speech:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 100px;
+  border: 25px solid;
+  border-color: #666 transparent transparent #666;
+}
+
+h1.speech:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 38px;
+  top: 100px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+}

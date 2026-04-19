@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
-$END$
+
+
+<div class="folder-container">
+  <div class="tabs">
+      <button class="tab about"><span id="star">☆</span> About Me</button>
+      <button class="tab portfolio"><span id="crayon">🖍</span> Portfolio</button>
+      <button class="tab contact">✉ Contact Me</button>
+  </div>
+  <div class="content">
+
+    <div>
+        <img src="static/hijabi.jpg" id="cartoon">
+        <p class="speech">Hi, I'm Brygetee!</p>
+        <h1 id="greeting">Hi, I'm Brygetee!</h1>
+        <p>I’m a full-stack web developer with a background in computer engineering. I create responsive, user-friendly web apps using Python and Flask.</p>
+        <div class="about_section programming_skills">
+            <h2>Programming Skills</h2>
+                <b>Languages: </b> Python, JavaScript, C++<br>
+                <b>Backend & Frameworks: </b> Flask, SQLAlchemy, Flask-Login, WTForms, Jinja2<br>
+                <b>Frontend: </b>HTML5, CSS3, Bootstrap 5 (responsive design)<br>
+                <b>APIs & Data: </b>REST APIs, JSON, external API integration<br>
+                <b>Databases: </b>SQLite, PostgreSQL<br>
+                <b>Tools & Workflow: </b>Git, GitHub, Postman, PyCharm, VS Code, Chrome DevTools
+    Environment variables (.env), Heroku deployment<br>
+                <b>Automation & Scraping: </b>Selenium, BeautifulSoup<br>
+        </div>
+       <div class="about_section languages">
+        <h2>Languages</h2>
+            <b>English</b> Native<br>
+            <b>Spanish</b> Proficient<br>
+            <b>Arabic</b> Intermediate<br>
+        </div>
+
+        <div class="about_section education">
+            <h2>Education</h2>
+            <b>Bachelor of Technology in Computer Engineering</b><br>
+            CUNY New York City College of Technology<br>
+            Dean’s List<br>
+            <br>
+            <b>Python Development</b><br>
+            Udemy - 100 Days of Code The Complete Python Pro Bootcamp<br>
+            <br>
+            <b>Full-Stack Web Development</b><br>
+            Udemy - The Complete Full-Stack Web Developer Bootcamp<br>
+            <br>
+            <b>Certifications</b><br>
+            TestOut PC Pro(IT systems, hardware, troubleshooting)<br>
+        </div>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

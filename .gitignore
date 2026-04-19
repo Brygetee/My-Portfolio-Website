@@ -1,0 +1,87 @@
+# =========================
+
+# OS files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =========================
+
+# Python
+
+# =========================
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+
+venv/
+env/
+.venv/
+ENV/
+
+# Distribution / packaging
+
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+
+# Flask
+
+# =========================
+
+instance/
+.webassets-cache
+
+# Flask environment variables
+
+.env
+.env.*
+*.env
+
+# =========================
+
+# Logs / database
+
+# =========================
+
+*.log
+*.sqlite3
+
+# =========================
+
+# Testing / coverage
+
+# =========================
+
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+
+# PyCharm / JetBrains
+
+# =========================
+
+.idea/
+*.iml
+out/
+
+# =========================
+
+# Misc
+
+# =========================
+
+*.swp
+*.swo
+*~
