@@ -83,52 +83,64 @@ body{
     border: 15px dashed pink;
 }
 
-#greeting{
-    display: inline-block;
-    text-align: right;
+.greeting{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+
+
 }
 #cartoon{
     height: 200px;
-    width: auto;
+    width: 200px;
     border: 15px dashed pink;
     border-radius: 10px;
     display: inline-block;
 }
 
-
-h1.speech {
+/* Speech bubble container */
+.speech {
   position: relative;
-  width: 200px;
-  height: 100px;
+  width: 300px;
+  padding: 10px;
   text-align: center;
-  line-height: 100px;
   background-color: #fff;
-  border: 8px solid #666;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
+
+  border: 8px solid #fb6f92;  /* main outline color */
   border-radius: 30px;
-  -webkit-box-shadow: 2px 2px 4px #888;
-  -moz-box-shadow: 2px 2px 4px #888;
+
   box-shadow: 2px 2px 4px #888;
-}
-h1.speech:before {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 30px;
-  top: 100px;
-  border: 25px solid;
-  border-color: #666 transparent transparent #666;
+  margin-bottom: 20px;
 }
 
-h1.speech:after {
-  content: ' ';
+/* triangle outline (outer border) */
+.speech:before {
+  content: '';
   position: absolute;
   width: 0;
   height: 0;
-  left: 38px;
-  top: 100px;
-  border: 15px solid;
+  right: 30px;
+  top: 100%;
+
+  border-width: 25px;
+  border-style: solid;
+
+  /* outline color matches border */
+  border-color: #fb6f92 transparent transparent #fb6f92;
+}
+
+/* triangle fill (inner part) */
+.speech:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 38px;
+  top: 100%;
+
+  border-width: 15px;
+  border-style: solid;
+
   border-color: #fff transparent transparent #fff;
 }
