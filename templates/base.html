@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="folder-container">
+        <div class="tabs">
+
+            <button class="tab portfolio"><span id="crayon">🖍</span> Portfolio</button>
+            <a href="/"><button class="tab about" ><span id="star">☆</span> About Me</button></a>
+            <a href="/contact"><button class="tab contact">✉ Contact Me</button></a>
+        </div>
+      <div class="content">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+
+
+</body>
+</html>

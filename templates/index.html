@@ -1,71 +1,82 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
 
+    <div class="about-page-container">
+        <div class="paragraph_sections">
+            <div class="first_column">
+                <div class="about_section education">
+                    <h2>Education</h2>
+                    <h3>CUNY New York City College of Technology</h3>
+                    <ul class="education_list">
+                        <li>Bachelor of Technology in Computer Engineering</li>
+                    </ul>
 
-<div class="folder-container">
-  <div class="tabs">
-      <button class="tab about" ><span id="star">☆</span> About Me</button>
-      <button class="tab portfolio"><span id="crayon">🖍</span> Portfolio</button>
-      <button class="tab contact">✉ Contact Me</button>
-  </div>
-  <div class="content">
+                    <h3>Udemy Coursework</h3>
+                    <ul class="education_list">
+                        <li>100 Days of Code: The Complete Python Pro Bootcamp</li>
+                        <li>The Complete Full-Stack Web Developer Bootcamp</li>
 
-    <div>
-        <div class="greeting">
+                    </ul>
 
-           <div class="speech">
-               <h2>Hi, I'm Brygetee!</h2>
-               <p>I’m a full-stack web developer with a background in computer engineering. I create responsive, user-friendly web apps using Python and Flask.</p>
+                    <h3>Certifications</h3>
+                    <ul class="education_list">
+                        <li>TestOut PC Pro(IT systems, hardware, troubleshooting)</li>
+                    </ul>
+                </div>
+
             </div>
-            <img src="static/hijabi.jpg" id="cartoon">
+
+
+            <div class="second_column">
+                <h1>About Me</h1>
+                <div class="about_section programming_skills">
+                    <h2>Programming Skills</h2>
+                        <b>Languages: </b> Python, JavaScript, C++<br>
+                        <b>Backend & Frameworks: </b> Flask, SQLAlchemy, Flask-Login, WTForms, Jinja2<br>
+                        <b>Frontend: </b>HTML5, CSS3, Bootstrap 5 (responsive design)<br>
+                        <b>APIs & Data: </b>REST APIs, JSON, external API integration<br>
+                        <b>Databases: </b>SQLite, PostgreSQL<br>
+                        <b>Tools & Workflow: </b>Git, GitHub, Postman, PyCharm, VS Code, Chrome DevTools
+                            Environment variables (.env), Heroku deployment<br>
+                        <b>Automation & Scraping: </b>Selenium, BeautifulSoup<br>
+
+                    <h2>Languages</h2>
+                    <b>English</b> Native<br>
+                    <b>Spanish</b> Proficient<br>
+                    <b>Arabic</b> Intermediate<br>
+                </div>
+            </div>
+
+
+
+
+            <div class="third_column">
+                <div class="greeting">
+                    <div class="speech">
+                       <h3>Hi, I'm Brygetee!</h3>
+                       <p>I’m a full-stack web developer with a background in computer engineering. I create responsive, user-friendly web apps using Python and Flask.</p>
+                    </div>
+                <img src="static/hijabi.jpg" id="cartoon">
+                <div class="about_section socials">
+
+                    <a href="https://github.com/Brygetee" class="nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" >
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                      </svg> Github</a>
+
+                    <a href="https://www.linkedin.com/in/brygetee-michelle-al-shawkani-2aa09425b/" class="nav-link px-2 text-body-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      </svg>  LinkedIn</a>
+
+                </div>
+        </div>
+    </div>
         </div>
 
-        <div class="about_section programming_skills">
-            <h2>Programming Skills</h2>
-                <b>Languages: </b> Python, JavaScript, C++<br>
-                <b>Backend & Frameworks: </b> Flask, SQLAlchemy, Flask-Login, WTForms, Jinja2<br>
-                <b>Frontend: </b>HTML5, CSS3, Bootstrap 5 (responsive design)<br>
-                <b>APIs & Data: </b>REST APIs, JSON, external API integration<br>
-                <b>Databases: </b>SQLite, PostgreSQL<br>
-                <b>Tools & Workflow: </b>Git, GitHub, Postman, PyCharm, VS Code, Chrome DevTools
-    Environment variables (.env), Heroku deployment<br>
-                <b>Automation & Scraping: </b>Selenium, BeautifulSoup<br>
-        </div>
-       <div class="about_section languages">
-        <h2>Languages</h2>
-            <b>English</b> Native<br>
-            <b>Spanish</b> Proficient<br>
-            <b>Arabic</b> Intermediate<br>
-        </div>
-
-        <div class="about_section education">
-            <h2>Education</h2>
-            <b>Bachelor of Technology in Computer Engineering</b><br>
-            CUNY New York City College of Technology<br>
-            Dean’s List<br>
-            <br>
-            <b>Python Development</b><br>
-            Udemy - 100 Days of Code The Complete Python Pro Bootcamp<br>
-            <br>
-            <b>Full-Stack Web Development</b><br>
-            Udemy - The Complete Full-Stack Web Developer Bootcamp<br>
-            <br>
-            <b>Certifications</b><br>
-            TestOut PC Pro(IT systems, hardware, troubleshooting)<br>
-        </div>
 
     </div>
-  </div>
 </div>
 
-</body>
-</html>
+
+
+{% endblock %}

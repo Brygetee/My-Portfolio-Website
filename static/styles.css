@@ -1,5 +1,4 @@
 /*/*-----------------------------------------General Page Styles-----------------------------------------*/
-
 /*-----Fonts-----*/
 .jua-regular {
   font-family: "Jua", sans-serif;
@@ -9,16 +8,16 @@
 
 /*-----Body Styles-----*/
 body{
-    background-image: url("pink_yarn.jpg");
+    background-image: url("pink_sky2.jpg");
     background-size: cover;
-    font-family: "Jua";
+    font-family: "Jua", sans-serif;
     color: #fb6f92;
 }
 
 /*-----Tab Styles & Folder Styles-----*/
 
 .folder-container {
-  max-width: 75vw;
+  max-width: 90vw;
   margin: 50px auto;
 }
 
@@ -43,9 +42,9 @@ body{
 }
 
 .tab.about {
-    background: #cfbaf0;
+    background: #fb6f92;
     color: white;
-  z-index: 2; /* Ensures the active tab stays on top */
+
 }
 
 .tab.portfolio {
@@ -57,17 +56,19 @@ body{
     color: white;
 }
 /*-----------------------------------------About Me page styles-----------------------------------------*/
-
 .content {
   border: 15px solid #fb6f92;
   padding: 20px;
   border-radius: 8px 8px 8px 8px; /* Curve for the rest of the folder */
   background: #ffe5ec;
+  height: 80vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* About Section Styles*/
 .about_section{
-    width: fit-content;
+
     border-radius: 10px;
     padding: 10px 20px;
     margin: 20px;
@@ -75,18 +76,29 @@ body{
 .about_section.languages{
      border: 15px dashed #fb6f92;
 }
-.about_section.programming_skills{
-    border: 15px dashed #cfbaf0;
+
+
+
+
+.about_section.socials{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3em;
+    margin: 2em auto;
+
+
 }
 
-.about_section.education{
-    border: 15px dashed pink;
+.about_section.socials a{
+    text-decoration: none;
+    color: inherit;
 }
-
 .greeting{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    width: fit-content;
+
 
 
 
@@ -97,6 +109,7 @@ body{
     border: 15px dashed pink;
     border-radius: 10px;
     display: inline-block;
+    margin: 0 auto;
 }
 
 /* Speech bubble container */
@@ -106,12 +119,15 @@ body{
   padding: 10px;
   text-align: center;
   background-color: #fff;
-
   border: 8px solid #fb6f92;  /* main outline color */
   border-radius: 30px;
-
   box-shadow: 2px 2px 4px #888;
   margin-bottom: 20px;
+}
+
+.speech h3{
+    font-size: 2.25em;
+    margin: 0.25em auto;
 }
 
 /* triangle outline (outer border) */
@@ -122,10 +138,8 @@ body{
   height: 0;
   right: 30px;
   top: 100%;
-
   border-width: 25px;
   border-style: solid;
-
   /* outline color matches border */
   border-color: #fb6f92 transparent transparent #fb6f92;
 }
@@ -138,9 +152,65 @@ body{
   height: 0;
   right: 38px;
   top: 100%;
-
   border-width: 15px;
   border-style: solid;
-
   border-color: #fff transparent transparent #fff;
+}
+.paragraph_sections{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+
+}
+/*--------------------------------------About Me Page Column Sections----------------------------------------------*/
+.first_column, .second_column, .third_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about_section.education{
+    border: 15px dashed pink;
+    height: 100%;
+    padding: 20px;
+}
+.about_section.education:hover{
+    transform: scale(1.05, 1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px -5px 25px pink;
+
+}
+
+.education_list{
+    list-style-type: "☆ ";
+}
+.education_list li{
+    margin-bottom: 0.75em;
+}
+
+.about_section.programming_skills{
+    border: 15px dashed #cfbaf0;
+    padding: 1em;
+    height: 65%;
+}
+.second_column h1{
+    font-size: 6rem;
+    font-weight: bold;
+    padding:0 auto;
+    width: 450px;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+.first_column h2, .second_column h2, .third_column h2{
+    text-align: center;
+    font-size: 45px;
+    margin: 0 0 0.35em 0;
+
+
+}
+.about-page-container{
+    height: 100%;
+    width: 100%;
 }
