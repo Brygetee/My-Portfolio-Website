@@ -1,4 +1,17 @@
 /*/*-----------------------------------------General Page Styles-----------------------------------------*/
+/*-----Colors-----*/
+:root{
+    --dark-pink :#fb6f92;
+    --light-pink: #ffe5ec;
+    --light-purple: #cfbaf0;
+    --off-white: #fff8fb;
+    --pink-shadow: #fb6f9273;
+    --text-pink:  #f284aa;
+}
+
+
+
+
 /*-----Fonts-----*/
 .jua-regular {
   font-family: "Jua", sans-serif;
@@ -6,19 +19,20 @@
   font-style: normal;
 }
 
+
 /*-----Body Styles-----*/
 body{
     background-image: url("pink_sky2.jpg");
     background-size: cover;
     font-family: "Jua", sans-serif;
-    color: #fb6f92;
+    color: var(--dark-pink);
 }
 
 /*-----Tab Styles & Folder Styles-----*/
 
 .folder-container {
   max-width: 90vw;
-  margin: 50px auto;
+  margin: 25px auto;
 }
 
 .tabs {
@@ -29,7 +43,7 @@ body{
 
 .tab {
   padding: 10px 20px;
-  border: 10px solid #fb6f92;
+  border: 10px solid var(--dark-pink);
   border-bottom: none;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
@@ -37,12 +51,12 @@ body{
   z-index: 1;
   font-family: "Jua";
   font-size: 2rem;
-  color: #fb6f92;
+  color: var(--dark-pink);
   background: white;
 }
 
 .tab.about {
-    background: #fb6f92;
+    background:var(--dark-pink);
     color: white;
 
 }
@@ -52,29 +66,28 @@ body{
     color: white;
 }
 .tab.contact{
-    background: #fb6f92;
+    background: var(--dark-pink);
     color: white;
 }
 /*-----------------------------------------About Me page styles-----------------------------------------*/
 .content {
-  border: 15px solid #fb6f92;
-  padding: 20px;
+  border: 15px solid var(--dark-pink);
+  padding: 10px;
   border-radius: 8px 8px 8px 8px; /* Curve for the rest of the folder */
-  background: #ffe5ec;
-  height: 80vh;
+  background: var(--light-pink);
+  height: 85vh;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 /* About Section Styles*/
 .about_section{
-
     border-radius: 10px;
     padding: 10px 20px;
     margin: 20px;
 }
 .about_section.languages{
-     border: 15px dashed #fb6f92;
+     border: 15px dashed var(--dark-pink);
 }
 
 
@@ -119,7 +132,7 @@ body{
   padding: 10px;
   text-align: center;
   background-color: #fff;
-  border: 8px solid #fb6f92;  /* main outline color */
+  border: 8px solid var(--dark-pink); /* main outline color */
   border-radius: 30px;
   box-shadow: 2px 2px 4px #888;
   margin-bottom: 20px;
@@ -141,7 +154,7 @@ body{
   border-width: 25px;
   border-style: solid;
   /* outline color matches border */
-  border-color: #fb6f92 transparent transparent #fb6f92;
+  border-color: var(--dark-pink) transparent transparent var(--dark-pink);
 }
 
 /* triangle fill (inner part) */
@@ -159,44 +172,83 @@ body{
 .paragraph_sections{
     height: 100%;
     display: flex;
-    flex-direction: row;
-
-
 }
 /*--------------------------------------About Me Page Column Sections----------------------------------------------*/
+
 .first_column, .second_column, .third_column{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    box-sizing: border-box;
 }
+
+.first_column{
+    justify-content: flex-start;
+}
+
 
 .about_section.education{
-    border: 15px dashed pink;
-    height: 100%;
+    border: 15px dashed #ffb3c6;
     padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    background: var(--off-white);
+    box-shadow: 0 8px 15px rgba(251,111,146,0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.about_section.education:hover{
-    transform: scale(1.05, 1.05);
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 5px -5px 25px pink;
 
+.about_section.education:hover{
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 15px var(--pink-shadow);
 }
+
+.first_column h2 {
+    background: var(--off-white);
+    color: var(--dark-pink);
+    border: 4px solid var(--dark-pink);
+    border-radius: 30px;
+    display: inline-block;
+    padding: 8px 20px;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    box-shadow: 3px 3px 0 #ffc2d1;
+    font-weight: bold;
+}
+
+
+.first_column h3{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: var(--dark-pink);
+    text-shadow:
+    1px 1px 0 var(--off-white);
+}
+
+
 
 .education_list{
-    list-style-type: "☆ ";
+    list-style-type: "✿ ";
+    color: var(--text-pink);
+
+
 }
 .education_list li{
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5em;
 }
 
+
 .about_section.programming_skills{
-    border: 15px dashed #cfbaf0;
+    border: 15px dashed var(--light-purple);
     padding: 1em;
     height: 65%;
 }
 .second_column h1{
-    font-size: 6rem;
+    background: var(--off-white);
+    color: var(--dark-pink);
+    border: 10px solid var(--dark-pink);
+    text-align:center;
+    border-radius: 30px;
+    font-size: 5.5rem;
     font-weight: bold;
     padding:0 auto;
     width: 450px;
@@ -207,6 +259,7 @@ body{
     text-align: center;
     font-size: 45px;
     margin: 0 0 0.35em 0;
+
 
 
 }
