@@ -2,52 +2,103 @@
 {% block title %}Portfolio{% endblock %}
 {% block content %}
 
-    <div class="about-page-container">
-        <div class="paragraph_sections">
-            <div class="first_column">
-                <div class="about_section education">
+        <div class="column-sections">
+            <div class="first-column">
                     <h2>Education</h2>
                     <h3>CUNY New York City College of Technology</h3>
-                    <ul class="education_list">
+                    <ul class="list">
                         <li>Bachelor of Technology in Computer Engineering</li>
                     </ul>
-
                     <h3>Udemy Coursework</h3>
-                    <ul class="education_list">
+                    <ul class="list">
                         <li>100 Days of Code: The Complete Python Pro Bootcamp</li>
                         <li>The Complete Full-Stack Web Developer Bootcamp</li>
-
                     </ul>
-
                     <h3>Certifications</h3>
-                    <ul class="education_list">
+                    <ul class="list">
+                        <li>FreeCodeCamp Responsive Web Design Certification</li>
                         <li>TestOut PC Pro(IT systems, hardware, troubleshooting)</li>
                     </ul>
-                </div>
-
             </div>
 
 
             <div class="second_column">
-                <h1>About Me</h1>
-                <div class="about_section programming_skills">
+                <div>
+                    <h1>About Me</h1>
+                </div>
+                <div class="programming_skills">
                     <h2>Technical Skills</h2>
-                    <h3>Programming Skills</h3>
-                        <b>Languages: </b> Python, JavaScript, C++<br>
-                        <b>Backend & Frameworks: </b> Flask, SQLAlchemy, Flask-Login, WTForms, Jinja2<br>
-                        <b>Frontend: </b>HTML5, CSS3, Bootstrap 5 (responsive design)<br>
-                        <b>APIs & Data: </b>REST APIs, JSON, external API integration<br>
-                        <b>Databases: </b>SQLite, PostgreSQL<br>
-                        <b>Tools & Workflow: </b>Git, GitHub, Postman, PyCharm, VS Code, Chrome DevTools
-                            Environment variables (.env), Heroku deployment<br>
-                        <b>Automation & Scraping: </b>Selenium, BeautifulSoup<br>
-
                     <h3>Languages</h3>
-                    <ul>
-                    <li><b>English</b> Native<br></li>
-                    <b>Spanish</b> Proficient<br>
-                    <b>Arabic</b> Intermediate<br>
-                    </ul>
+                    <div class="languages">
+                        <div>
+                            <h4>Programming</h4>
+                            <ul class="list">
+                                <li>Python</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Spoken</h4>
+                            <ul class="list">
+                                <li>English</li>
+                                <li>Spanish</li>
+                                <li>Arabic</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <h3>Web Development</h3>
+                    <div class="web-dev">
+                        <div>
+                            <h4>Front-End</h4>
+                            <ul class="list">
+                                <li>HTML5</li>
+                                <li>CSS3 </li>
+                                <li>Bootstrap 5</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4>Back-End</h4>
+                            <ul class="list">
+                                <li>Flask </li>
+                                <li>REST APIs </li>
+                                <li>SQLAlchemy </li>
+                                <li>Jinja2</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Developer Tools</h4>
+                            <ul class="list">
+                                <li>Git </li>
+                                <li>Github </li>
+                                <li>Postman </li>
+                                <li>Chrome DevTools</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Additional Technologies</h3>
+                    <div class="additional">
+                        <div>
+                            <h4>Databases</h4>
+                            <ul class="list">
+                                <li>PostgreSQL</li>
+                                <li>SQLite</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Other</h4>
+                            <ul class="list">
+                                <li>Selenium</li>
+                                <li>BeautifulSoup</li>
+                                <li>Environment Variables (.env)</li>
+                                <li>Heroku Deployment</li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -58,7 +109,7 @@
                 <div class="greeting">
                     <div class="speech">
                        <h3>Hi, I'm Brygetee!</h3>
-                       <p>I’m a full-stack web developer with a background in computer engineering. I create responsive, user-friendly web apps using Python and Flask.</p>
+<p>I'm a web developer with a computer engineering background, building responsive apps with Python and Flask.</p>
                     </div>
                 <img src="static/hijabi.jpg" id="cartoon">
                 <div class="about_section socials">
@@ -78,7 +129,6 @@
 
 
     </div>
-</div>
 
 
 

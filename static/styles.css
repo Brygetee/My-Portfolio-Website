@@ -4,13 +4,12 @@
     --dark-pink :#fb6f92;
     --light-pink: #ffe5ec;
     --light-purple: #cfbaf0;
+    --dark-purple: #9c7bd8;
     --off-white: #fff8fb;
     --pink-shadow: #fb6f9273;
     --text-pink:  #f284aa;
+    font-size: 16px;
 }
-
-
-
 
 /*-----Fonts-----*/
 .jua-regular {
@@ -28,7 +27,7 @@ body{
     color: var(--dark-pink);
 }
 
-/*-----Tab Styles & Folder Styles-----*/
+/*----------------------------------------Tab Styles & Folder Styles------------------------------------------------*/
 
 .folder-container {
   max-width: 90vw;
@@ -69,28 +68,165 @@ body{
     background: var(--dark-pink);
     color: white;
 }
-/*-----------------------------------------About Me page styles-----------------------------------------*/
 .content {
   border: 15px solid var(--dark-pink);
-  padding: 10px;
-  border-radius: 8px 8px 8px 8px; /* Curve for the rest of the folder */
+  border-radius: 8px 8px 8px 8px;
   background: var(--light-pink);
   height: 85vh;
   box-sizing: border-box;
   overflow: hidden;
 }
+/*-----------------------------------------About Me Page styles-----------------------------------------*/
+.column-sections{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border: 3px solid var(--light-purple);
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/*---------- Shared Column Section Styles--------*/
+
+.first-column, .second_column, .third_column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.first-column h2, .second_column h2, .third_column h2{
+    text-align: center;
+    font-size:  2.25rem;
+    background: var(--off-white);
+    border-radius: 20px;
+    display: inline-block;
+    width: fit-content;
+    padding: 0.15em 1.15em;
+    margin: 10px auto;
+}
+
+.first-column h3, second_column h3{
+    font-size: 1.25em;
+    text-shadow: 1px 1px 0 var(--off-white);
+    margin-top:0;
+}
+
+.list{
+    list-style-type: "✿ ";
+    color: var(--text-pink);
+
+}
+.list li{
+    margin-bottom: 0;
+}
+
+/*  -------------------------First Column Styles -------------------------*/
+.first-column{
+    background: var(--off-white);
+    border: 10px dashed #ffb3c6;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 90%;
+    box-shadow: 0 8px 15px rgba(251,111,146,0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    margin: 20px;
+    justify-content: center;
+}
+
+.first-column:hover{
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 15px var(--pink-shadow);
+}
+
+.first-column h2{
+    border: 10px solid pink;
+    margin-bottom: 10px;
+}
+
+/* -------------------------Second Column Styles---------------------*/
+.second_column{
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    border: 2px solid blue;
+}
+.second_column h1{
+    background: var(--off-white);
+    color: var(--dark-pink);
+    border: 15px solid var(--dark-pink);
+    text-align:center;
+    border-radius: 30px;
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 0 auto;
+    position: relative;
+    margin: 20px 0 10px 0;
+}
+.programming_skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    background: var(--off-white);
+    padding: 10px;
+    border: 10px dashed var(--light-purple);
+    border-radius: 10px;
+    color: var(--dark-purple);
+    box-shadow: 0 8px 15px rgba(207,186,240,.35);
+    width: 95%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+.programming_skills:hover{
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 15px var(--light-purple);
+    }
+
+.programming_skills div{
+    align-items: space-evenly;
+}
+.second_column h2{
+border: 10px solid var(--light-purple);
+margin: 0 auto;
+color: var(--dark-purple);
+}
+
+ .second_column h3{
+    margin: 15px 0 0 0;
+    text-align: center;
+ }
+ .second_column h4{
+    margin: 0.25em 0 0 0;
+ }
+
+
+
+.web-dev, .languages, .additional{
+    display:flex;
+    color: var(--dark-purple);
+    /*border: 2px solid red;*/
+}
+
+
+.web-dev .list,.languages .list, .additional .list{
+    color: var(--dark-purple);
+    margin-bottom: 0;
+}
+
+
+.third_column{
+    justify-content: center;
+}
+
 
 /* About Section Styles*/
 .about_section{
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 60px 20px;
     margin: 20px;
+    border: 5px solid black;
 }
-.about_section.languages{
-     border: 15px dashed var(--dark-pink);
-}
-
-
 
 
 .about_section.socials{
@@ -98,7 +234,6 @@ body{
     justify-content: space-evenly;
     gap: 3em;
     margin: 2em auto;
-
 
 }
 
@@ -111,8 +246,6 @@ body{
     align-items: flex-end;
     flex-direction: column;
     width: fit-content;
-
-
 
 
 }
@@ -141,6 +274,7 @@ body{
 .speech h3{
     font-size: 2.25em;
     margin: 0.25em auto;
+    text-align: center;
 }
 
 /* triangle outline (outer border) */
@@ -169,101 +303,4 @@ body{
   border-style: solid;
   border-color: #fff transparent transparent #fff;
 }
-.paragraph_sections{
-    height: 100%;
-    display: flex;
-}
-/*--------------------------------------About Me Page Column Sections----------------------------------------------*/
 
-.first_column, .second_column, .third_column{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.first_column{
-    justify-content: flex-start;
-}
-
-
-.about_section.education{
-    border: 15px dashed #ffb3c6;
-    padding: 20px;
-    box-sizing: border-box;
-    height: 100%;
-    background: var(--off-white);
-    box-shadow: 0 8px 15px rgba(251,111,146,0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about_section.education:hover{
-    transform: translateY(-5px);
-    box-shadow: 6px 10px 15px var(--pink-shadow);
-}
-
-.first_column h2 {
-    background: var(--off-white);
-    color: var(--dark-pink);
-    border: 4px solid var(--dark-pink);
-    border-radius: 30px;
-    display: inline-block;
-    padding: 8px 20px;
-    width: fit-content;
-    margin: 0 auto 20px auto;
-    box-shadow: 3px 3px 0 #ffc2d1;
-    font-weight: bold;
-}
-
-
-.first_column h3{
-    margin-bottom: 0;
-    font-size: 1.5rem;
-    color: var(--dark-pink);
-    text-shadow:
-    1px 1px 0 var(--off-white);
-}
-
-
-
-.education_list{
-    list-style-type: "✿ ";
-    color: var(--text-pink);
-
-
-}
-.education_list li{
-    margin-bottom: 0.5em;
-}
-
-
-.about_section.programming_skills{
-    border: 15px dashed var(--light-purple);
-    padding: 1em;
-    height: 65%;
-}
-.second_column h1{
-    background: var(--off-white);
-    color: var(--dark-pink);
-    border: 10px solid var(--dark-pink);
-    text-align:center;
-    border-radius: 30px;
-    font-size: 5.5rem;
-    font-weight: bold;
-    padding:0 auto;
-    width: 450px;
-    margin-top: 0px;
-    margin-bottom: 0;
-}
-.first_column h2, .second_column h2, .third_column h2{
-    text-align: center;
-    font-size: 45px;
-    margin: 0 0 0.35em 0;
-
-
-
-}
-.about-page-container{
-    height: 100%;
-    width: 100%;
-}
