@@ -16,3 +16,5 @@ if __name__ == '__main__':
 
 
 # emojis: https://emojicombos.com/heart
+# TODO 1: Add two more flower decorations and make them all responsive
+# TODO 2: Complete rough draft of contact me form page
