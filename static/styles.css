@@ -84,9 +84,10 @@ body{
     height: 100%;
     width: 100%;
     display: flex;
-    border: 3px solid var(--light-purple);
-    padding: 30px;
+    border: 4px solid var(--light-purple);
+    padding: 0px;
     align-items: center;
+    overflow: hidden;
 }
 
 /*---------- Shared Column Section Styles--------*/
@@ -95,6 +96,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
 }
 .first-column h2, .second_column h2, .third_column h2{
     text-align: center;
@@ -106,9 +109,17 @@ body{
     padding: 0.15em 1.15em;
     margin: 10px auto;
 }
-
+/*h2s sit on top of the middle of the dashed border*/
+.first-column h2, .second_column h2{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    margin: 0;
+    white-space: nowrap;
+}
 .first-column h3, .second_column h3{
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-align: center;
     text-shadow: 1px 1px 0 var(--off-white);
     margin:0;
@@ -130,10 +141,10 @@ body{
     background: var(--off-white);
     border: 10px dashed #ffb3c6;
     border-radius: 10px;
-    height: 90%;
+    height: 80%;
     box-shadow: 0 8px 15px rgba(251,111,146,0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 0.5rem;
+    padding-top: 4rem;
     margin: 20px;
     justify-content: space-evenly;
     width: 25%;
@@ -149,54 +160,84 @@ body{
     border: 10px solid pink;
     margin: 1rem auto;
 
+
 }
 .first-column h3{
     margin: 0;
+
+
 }
 #flower-decoration-1{
     color: var(--dark-purple);
-    font-size: 100px;
+    font-size: 8rem;
     position: absolute;
-    top: -80px;
-    left: -45px;
+    z-index: 3;
+    top: 80%;
+    left: 28%;
+
+
+
+
 }
 #flower-decoration-2{
-    color: var(--dark-pink);
-    font-size: 100px;
+    color: var(--dark-purple);
+    font-size: 5rem;
     position: absolute;
-    top: 24%;
-    right: 28.5%;
+    z-index: 3;
+    right: 27%;
+    top: 31%;
 }
+#flower-decoration-1,
+#flower-decoration-2 {
+  animation: flower 3s ease-in-out infinite;
+}
+@keyframes flower{
+  0%,100%{
+    transform: rotate(-4deg);
+  }
+  50%{
 
+      transform: rotate(4deg);
+  }
+}
 /* -------------------------Second Column Styles---------------------*/
 .second_column{
     height: 100%;
     width: 50%;
-    padding: 20px;
-    justify-content: center;
+
+
 }
+
 .second_column h1{
-    background: var(--off-white);
     color: var(--dark-pink);
-    border: 15px solid var(--dark-pink);
+    background: none;
+    border: none;
+    text-shadow:
+        3px 3px 0 var(--off-white),
+        6px 6px 0 var(--light-purple);
     text-align:center;
     border-radius: 30px;
-    font-size: 5rem;
+    font-size: 6rem;
     padding: 0 1rem;
-    margin: 1rem;
+    margin-top: 1rem;
+    position: absolute;
+    right: 35%;
 }
 .programming_skills{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: space-between;
+    position: relative;
     background: var(--off-white);
     border: 10px dashed var(--light-purple);
     border-radius: 10px;
     color: var(--dark-purple);
     box-shadow: 0 8px 15px rgba(207,186,240,.35);
     width: 95%;
-    margin: 10px 0 20px 0;
+    margin: auto 0 1rem 0;
+    height: 70%;
+    padding-top: 4rem 1rem 1rem 1rem;
 }
 .programming_skills:hover{
     transform: translateY(-5px);
@@ -211,7 +252,7 @@ body{
 }
 
 .second_column h3{
-    margin: 15px 0;
+    margin: 1rem 0;
     text-align: center;
     align-self: center;
 
@@ -219,17 +260,15 @@ body{
  .second_column h4{
     margin: 0;
     text-align: center;
+    font-size: 0.9rem;
 
  }
-
-
 
 .web-dev, .languages, .additional{
     display:flex;
     color: var(--dark-purple);
     margin-bottom: 1rem;
 }
-
 
 .web-dev .list,.languages .list, .additional .list{
     color: var(--dark-purple);
@@ -238,10 +277,7 @@ body{
 
 .languages{
     justify-content: space-evenly;
-
 }
-
-
 
 .third_column{
     justify-content: center;
@@ -257,21 +293,24 @@ body{
     margin: 20px;
 }
 
-
-
 .about_section.socials{
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem;
+    font-size: 2rem;
     justify-content: space-evenly;
     margin: 2rem auto;
     padding: 0;
-
 }
 
 .about_section.socials a{
     text-decoration: none;
-    color: inherit;
+    color: var(--dark-pink);
+    text-shadow: 2px 2px 0 var(--off-white),
+        4px 4px 4px var(--light-purple);
+}
+.about_section.socials a:hover{
+    color: var(--dark-purple);
+
 }
 .greeting{
     display: flex;
@@ -288,20 +327,20 @@ body{
     border: 15px dashed pink;
     border-radius: 10px;
     display: block;
-    margin-top: 4px;
+    margin: 0 auto;
 }
 
 /* Speech bubble container */
 .speech {
   position: relative;
-  width: 325px;
-  padding: 15px;
+  width: 95%;
+  padding: 0;
   text-align: center;
   background-color: #fff;
   border: 8px solid var(--dark-pink); /* main outline color */
   border-radius: 30px;
   box-shadow: 2px 2px 4px #888;
-  margin-bottom: 20px;
+  margin:  2rem auto 1rem auto;
   color: var(--text-pink);
 }
 
@@ -338,3 +377,107 @@ body{
   border-color: #fff transparent transparent #fff;
 }
 
+/*-------------------------Form page--------------------------------*/
+ .post-card{
+    background-color: #fffdf8;
+    height: 50%;
+    width: 60%;
+    margin: 15% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 8px solid var(--off-white);
+    outline: 5px dashed var(--light-purple);
+    box-shadow:
+        0 10px 25px rgba(251,111,146,.25);
+    transform: rotate(-2deg);
+ }
+#contactForm input:focus,
+#message:focus{
+    background-color: #fff0f5;
+    outline: none;
+    box-shadow: 0 0 8px var(--light-purple);
+}
+ #stamp{
+    position: absolute;
+    height: 25%;
+    width: 10%;
+    border: 5px dashed var(--dark-purple);
+    background-color: var(--light-pink);
+    top: 4%;
+    right: 2%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+#post-card-contents,
+.contact-form-container{
+    width:50%;
+}
+ #post-card-contents{
+    border-right: 2px dashed var(--light-purple);
+    height: 80%;
+
+ }
+ #message{
+    width: 75%;
+    height: 60%;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px dashed var(--light-purple);
+    font-family: "Jua", sans-serif;
+    color: var(--dark-purple);
+    resize: none;
+ }
+ .contact-form-container, #post-card-contents{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+ }
+ #contactForm{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 70%;
+    height: 100%;
+    margin-top: 30%;
+ }
+#name, #email, #phone{
+    background-color: var(--light-pink);
+    border: none;
+}
+hr{
+  border: 2px dashed var(--light-purple);
+  width: 100%;
+  margin: 0 auto;
+}
+.address-lines{
+    position:absolute;
+    top:0%;
+    right:15%;
+    width:auto !important;
+    color:var(--text-pink);
+    font-size:1.2rem;
+    transform:rotate(-3deg);
+    border: 2px solid red;
+    margin: 0;
+}
+#send{
+    width: 20%;
+    margin: 0 auto;
+    font-family: jua, sans-serif;
+    font-weight: bold;
+    color: var(--dark-purple);
+    border: 2px solid var(--dark-purple);
+    background-color: var(--light-pink);
+    border-radius: 3px;
+    cursor: pointer;
+}
