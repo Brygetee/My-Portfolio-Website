@@ -18,7 +18,7 @@
             <a href="/"><button class="tab about" ><span id="star">☆</span> About Me</button></a>
             <a href="/contact"><button class="tab contact">✉ Contact Me</button></a>
         </div>
-      <div class="content">
+      <div class="content {% block content_class %}{% endblock %}">
         {% block content %}{% endblock %}
       </div>
     </div>
