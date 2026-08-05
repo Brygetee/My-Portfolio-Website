@@ -586,3 +586,100 @@ hr{
     gap:.5rem;
     padding:1rem;
 }
+
+
+/*---------------------------------------Portfolio Page---------------------------------------*/
+
+.portfolio-page{
+    overflow-y: scroll;
+    padding: 1rem 2rem 3rem;
+}
+
+#projects-h1{
+    font-size: 3rem;
+    background: var(--off-white);
+    border: 10px dashed var(--dark-purple);
+    border-radius: 8px;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.5rem 1.5rem;
+    transform: rotate(-3deg);
+    color: var(--dark-purple);
+}
+
+.portfolio-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 40px 40px;
+    place-items: center;
+    padding: 1rem 2rem 2rem;
+}
+
+.grid-card{
+    border: 5px dashed var(--light-purple);
+    border-radius: 10px;
+    background-color: var(--off-white);
+    box-shadow: 0 8px 15px rgba(251,111,146,0.18);
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 1.25rem 1rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-card:hover{
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 6px 10px 15px var(--pink-shadow);
+}
+
+.grid-card h2{
+    font-size: 1.6rem;
+    color: var(--dark-pink);
+    background: var(--light-pink);
+    border-radius: 20px;
+    padding: 0.15em 1.15em;
+    margin: 0 0 0.75rem;
+    text-align: center;
+    width: fit-content;
+}
+
+.portfolio-image{
+    height: auto;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 6px dashed var(--dark-purple);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.grid-card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: fit-content;
+    margin: .3rem auto;
+    padding: .4rem 1.1rem;
+    color: var(--dark-purple);
+    background: var(--light-pink);
+    border: 2px dashed var(--light-purple);
+    border-radius: 999px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.grid-card a:hover{
+    transform: translateY(-2px) rotate(-2deg);
+    background: var(--dark-purple);
+    color: var(--off-white);
+    border-color: var(--dark-pink);
+    box-shadow: 3px 4px 0 var(--light-purple);
+}
