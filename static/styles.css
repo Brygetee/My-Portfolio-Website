@@ -646,6 +646,24 @@ hr{
     margin: 0 0 0.75rem;
     text-align: center;
     width: fit-content;
+    white-space: nowrap;
+}
+.demo-video{
+    height: auto;
+    width: 100%;
+    max-width: 220px;
+    aspect-ration: 4/3;
+    object-fit: cover;
+    border: 6px dashed var(--dark-purple);
+    border-radius: 10px;
+    margin-bottom: 1 rem;
+}
+
+.demo-video:hover{
+    transform: scale(3) translateX(20%);
+    border: none;
+    border-radius: 0;
+
 }
 
 .portfolio-image{
