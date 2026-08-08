@@ -249,6 +249,7 @@ body{
     position: absolute;
     right: 35%;
 }
+
 .programming_skills{
     display: flex;
     flex-direction: column;
@@ -615,6 +616,7 @@ hr{
 
 .portfolio-content {
     overflow-y: auto;
+    border: 15px solid var(--text-pink);
 }
 
 .featured-grid {
