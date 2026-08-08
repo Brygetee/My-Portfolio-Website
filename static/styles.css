@@ -1,5 +1,6 @@
 /*/*-----------------------------------------General Page Styles-----------------------------------------*/
 /*-----Colors-----*/
+
 :root{
     --dark-pink :#fb6f92;
     --light-pink: #ffe5ec;
@@ -11,6 +12,9 @@
     font-size: 16px;
 }
 
+html {
+  scrollbar-color: var(--off-white) var(--light-purple) ; /* thumb track */
+}
 /*-----Fonts-----*/
 .jua-regular {
   font-family: "Jua", sans-serif;
@@ -57,20 +61,39 @@ body{
   background: white;
 }
 
-.tab.about {
-    background:var(--dark-pink);
-    color: white;
+.tabs a {
+  display: flex;
+  text-decoration: none;
+}
 
+.tab {
+  padding: 10px 20px;
+  border: 10px solid var(--dark-pink);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  margin-right: 5px;
+  z-index: 1;
+  font-size: 2rem;
+  color: var(--dark-pink);
+  background: var(--off-white);
+}
+.tab.about {
+    background: var(--off-white);
+    border-color: var(--dark-pink);
+    color: var(--dark-pink);
 }
 
 .tab.portfolio {
-    background: pink;
-    color: white;
+    background: var(--off-white);
+    border-color: var(--text-pink);
+    color: var(--text-pink);
 }
+
 .tab.contact{
-    background: var(--dark-purple);
+    background: var(--off-white);
     border-color: var(--dark-purple);
-    color: white;
+    color: var(--dark-purple);
 }
 .content {
   border: 15px solid var(--dark-pink);
@@ -590,27 +613,29 @@ hr{
 
 /*---------------------------------------Portfolio Page---------------------------------------*/
 
-.portfolio-page{
-    overflow-y: scroll;
-    padding: 1rem 2rem 3rem;
+.portfolio-content {
+    overflow-y: auto;
 }
 
-#projects-h1{
+.featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 3rem;
+}
+.section-label {
     font-size: 3rem;
+    color: var(--dark-pink);
     background: var(--off-white);
-    border: 10px dashed var(--dark-purple);
-    border-radius: 8px;
+    border: 6px dashed #ffb3c6;
+    border-radius: 20px;
     width: fit-content;
-    margin: 2rem auto;
-    padding: 0.5rem 1.5rem;
-    transform: rotate(-3deg);
-    color: var(--dark-purple);
+    margin: 3rem auto;
+    padding: .3rem 1.25rem;
+    transform: rotate(-2deg);
+    box-shadow: 2px 2px 10px var(--light-purple);
 }
-
 .portfolio-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     gap: 40px 40px;
     place-items: center;
@@ -636,6 +661,13 @@ hr{
     transform: translateY(-6px) rotate(-1deg);
     box-shadow: 6px 10px 15px var(--pink-shadow);
 }
+.featured-card{
+    padding: 1.5rem;
+}
+.featured-card .demo-video,
+.featured-card .portfolio-image {
+    max-width: 320px;
+}
 
 .grid-card h2{
     font-size: 1.6rem;
@@ -652,15 +684,14 @@ hr{
     height: auto;
     width: 100%;
     max-width: 220px;
-    aspect-ration: 4/3;
     object-fit: cover;
     border: 6px dashed var(--dark-purple);
     border-radius: 10px;
-    margin-bottom: 1 rem;
+    margin-bottom: 1rem;
 }
 
 .demo-video:hover{
-    transform: scale(3) translateX(20%);
+    transform: scale(1.25);
     border: none;
     border-radius: 0;
 
@@ -675,6 +706,20 @@ hr{
     border: 6px dashed var(--dark-purple);
     border-radius: 10px;
     margin-bottom: 1rem;
+}
+.tech-stack {
+    color: var(--text-pink);
+    font-size: .95rem;
+    text-align: center;
+    margin: .25rem 0 .75rem;
+}
+.project-links {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+}
+.grid-card:not(.featured-card) .portfolio-image {
+    max-width: 220px;
 }
 
 .grid-card a{

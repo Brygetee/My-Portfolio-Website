@@ -1,55 +1,111 @@
+
 {% extends "base.html" %}
-{% block title %}Portfolio{% endblock %}
+{% block title %}Portfolio Projects{% endblock %}
+{% block content_class %}portfolio-content{% endblock %}
 {% block content %}
 
-<div class="portfolio-page">
-<h1 id="projects-h1">Portfolio Projects</h1>
-<div class="portfolio-grid">
+<h2 class="section-label">☆ Featured Projects ☆</h2>
 
+<div class="portfolio-grid featured-grid">
 
-    <div class="grid-card" id="card-1">
+    <div class="grid-card featured-card" id="card-1">
         <h2>Full-Stack<br>E-Commerce Website</h2>
+
         <video class="demo-video" autoplay loop muted>
             <source src="static/celestia_botanica_demo.mp4" type="video/mp4">
         </video>
-        <a href="https://github.com/Brygetee/Celestia-Botanica">github link</a>
-        <a href="">website link</a>
+
+        <p class="tech-stack">
+            Python · Flask · HTML · CSS
+        </p>
+
+        <div class="project-links">
+            <a href="">Live Site</a>
+            <a href="https://github.com/Brygetee/Celestia-Botanica">GitHub</a>
+        </div>
     </div>
 
-    <div class="grid-card" id="card-2">
+    <div class="grid-card featured-card" id="card-2">
         <h2>Project Name</h2>
+
         <img class="portfolio-image" src="static/pink_sky2.jpg">
-        <a href="">github link</a>
-        <a href="">website link</a>
+
+        <p class="tech-stack">
+            Technologies
+        </p>
+
+        <div class="project-links">
+            <a href="">Live Site</a>
+            <a href="">GitHub</a>
+        </div>
     </div>
 
-    <div class="grid-card" id="card-3">
+    <div class="grid-card featured-card" id="card-3">
         <h2>Project Name</h2>
+
         <img class="portfolio-image" src="static/pink_sky2.jpg">
-        <a href="">github link</a>
-        <a href="">website link</a>
+
+        <p class="tech-stack">
+            Technologies
+        </p>
+
+        <div class="project-links">
+            <a href="">Live Site</a>
+            <a href="">GitHub</a>
+        </div>
     </div>
 
-        <div class="grid-card" id="card-4">
-            <h2>Project Name</h2>
-            <img class="portfolio-image" src="static/pink_sky2.jpg">
-            <a href="">github link</a>
-            <a href="">website link</a>
+</div>
+
+<h2 class="section-label">More Projects</h2>
+
+<div class="portfolio-grid">
+
+    <div class="grid-card" id="card-4">
+        <h2>Project Name</h2>
+
+        <img class="portfolio-image" src="static/pink_sky2.jpg">
+
+        <p class="tech-stack">
+            Technologies
+        </p>
+
+        <div class="project-links">
+            <a href="">Live Site</a>
+            <a href="">GitHub</a>
+        </div>
     </div>
 
     <div class="grid-card" id="card-5">
         <h2>Project Name</h2>
+
         <img class="portfolio-image" src="static/pink_sky2.jpg">
-        <a href="">github link</a>
-        <a href="">website link</a>
+
+        <p class="tech-stack">
+            Technologies
+        </p>
+
+        <div class="project-links">
+            <a href="">Live Site</a>
+            <a href="">GitHub</a>
+        </div>
     </div>
 
     <div class="grid-card" id="card-6">
         <h2>Project Name</h2>
+
         <img class="portfolio-image" src="static/pink_sky2.jpg">
-        <a href="">github link</a>
-        <a href="">website link</a>
+
+        <p class="tech-stack">
+            Technologies
+        </p>
+
+        <div class="project-links">
+            <a href="">Live Site</a>
+            <a href="">GitHub</a>
+        </div>
     </div>
+
 </div>
-</div>
+
 {% endblock %}
