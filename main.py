@@ -20,5 +20,4 @@ if __name__ == '__main__':
 
 
 # emojis: https://emojicombos.com/heart
-# TODO 1: Align cartoon on contact page + add h1
-# TODO 2: Complete rough draft of portfolio page + fix tab css
+# TODO 1: Make tabs :before, :after the content element
