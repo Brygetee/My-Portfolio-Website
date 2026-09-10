@@ -42,6 +42,8 @@ body {
 .folder-container {
     max-width: 90vw;
     margin: 25px auto;
+    position: relative;
+    background-color: orange;
 }
 
 .tabs {
@@ -121,7 +123,7 @@ body {
 .second-column h2,
 .third_column h2 {
     text-align: center;
-    font-size: 2.25rem;
+    font-size: 2rem;
     background: var(--off-white);
     border-radius: 20px;
     display: inline-block;
@@ -145,28 +147,41 @@ body {
 
 .first-column h3,
 .second-column h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: center;
     text-shadow: 1px 1px 0 var(--off-white);
-    margin: 0;
+    margin-top: 0.5rem;
     width: fit-content;
     text-transform: uppercase;
+    border: 5px solid var(--light-purple);
+    background-color: var(--off-white);
+    border-radius: 999px;
+    padding: 0.5rem;
 
 }
-.purple-highlight{
-    color: var(--dark-purple);
+.pink-highlight{
+    color: var(--dark-pink);
+
 
 
 }
-
+.first-column ul li::marker, .second-column ul li::marker  {
+    color: var(--light-purple);
+}
 
 .list {
     list-style-type: "✿ ";
     color: var(--text-pink);
+    margin: 0.25rem 0;
 }
 
+.first-column .list li {
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
 .list li {
     margin-bottom: 0.25rem;
+    color: var(--dark-purple);
 }
 
 /*-----------------------------------------H1-----------------------------------------*/
@@ -229,15 +244,15 @@ body {
 /*-----------------------------------------First Column Styles-----------------------------------------*/
 
 .first-column {
-    background: var(--off-white);
+    background: white;
     border: 10px dashed #ffb3c6;
     border-radius: 10px;
-    height: 90%;
+    height: 95%;
     box-shadow: 0 8px 15px rgba(251, 111, 146, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 4rem 1rem;
-    margin: 20px;
-    justify-content: space-evenly;
+    padding: 3.5rem 1rem 1.5rem;
+    margin: 1rem;
+    justify-content: flex-start;
     width: 25%;
     position: relative;
     order: 1;
@@ -277,6 +292,9 @@ body {
     position: relative;
 }
 
+.second-column h3 {
+    color: var(--dark-pink);
+}
 .second-column::before, .second-column::after{
     content: "";
     color: var(--dark-pink);
@@ -316,7 +334,7 @@ body {
     justify-content: center;
     align-items: space-between;
     position: relative;
-    background: var(--off-white);
+    background: white;
     border: 10px dashed var(--light-purple);
     border-radius: 10px;
     color: var(--dark-purple);
@@ -342,12 +360,14 @@ body {
     margin: 1rem 0;
     text-align: center;
     align-self: center;
+    font-size: 1.25rem;
 }
 
 .second-column h4 {
     margin: 0;
     text-align: center;
-    font-size: 0.9rem;
+    color: var(--text-pink);
+    text-transform: uppercase;
 }
 
 .web-dev,
@@ -356,25 +376,28 @@ body {
     display: flex;
     color: var(--dark-purple);
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.web-dev .list,
-.languages .list,
-.additional .list {
+.web-dev .list, {
     color: var(--dark-purple);
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+    align-items: center;
+
 }
 
-.languages {
-    justify-content: space-evenly;
+#spoken-languages{
+    margin-top: -10px;
 }
-
 /*-----------------------------------------Third Column-----------------------------------------*/
 
 .third_column {
     justify-content: center;
+
     width: 25%;
-    height: 100%;
+    height: 95%;
     order: 3;
 }
 
@@ -401,7 +424,7 @@ body {
 
 .social-list li a {
     text-decoration: none;
-    color: var(--dark-purple);
+    color: var(--text-pink);
     display: inline-block;
     transition: .25s;
 }
@@ -425,10 +448,10 @@ body {
 }
 
 #cartoon {
-    height: auto;
-    width: 100%;
-    max-width: 200px;
-    border: 15px dashed pink;
+    height: 100%;
+    width: auto;
+    max-height: 150px;
+    border: 10px dashed pink;
     border-radius: 10px;
     display: block;
     margin: 0 auto;
@@ -444,18 +467,18 @@ body {
 .speech {
     position: relative;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 0;
     text-align: center;
-    background-color: #fff;
+    background-color: white;
     border: 8px solid var(--dark-pink);
     border-radius: 30px;
     box-shadow: 2px 2px 4px #888;
-    margin: 2rem auto 1rem auto;
+    margin: 0 auto 1rem auto;
     color: var(--text-pink);
 }
 
 .speech h3 {
-    font-size: 2.25em;
+    font-size: 2rem;
     margin: 0 auto;
     text-align: center;
     color: var(--dark-pink);
@@ -662,6 +685,7 @@ hr {
     display: flex;
     flex-direction: column;
     color: var(--dark-purple);
+    justify-content: center;
     align-items: center;
     gap: .5rem;
     padding: 1rem;
@@ -687,9 +711,9 @@ hr {
     width: fit-content;
     margin: .4rem auto;
     padding: .45rem 1rem;
-    color: var(--dark-purple);
+    color: var(--text-pink);
     background: var(--off-white);
-    border: 2px dashed var(--light-purple);
+    border: 5px solid var(--light-purple);
     border-radius: 999px;
     transition: .25s;
     text-decoration: none;
@@ -853,18 +877,34 @@ hr {
     box-shadow: 3px 4px 0 var(--light-purple);
 }
 
-/*-----------------------------Responsive Styles ------------------------------*/
-
-@media (min-width: 480px) and (orientation: portrait) {
-
+/*-----------------------------Responsive Styles ----------------------------------------------------------------------------*/
+/* RESPONSIVE BREAKPOINTS
+   max-width: 479px  → Small phones
+   min-width: 480px  → Large phones
+   min-width: 768px  → Tablets
+   min-width: 1024px → Laptops / desktop
+   min-width: 1440px → Large monitors
+*/
+/*-------------------------------------------max-width: 479px  → Small phones-------------------------------------*/
+@media (max-width: 479.98px){
     .content,
     .column-sections {
-        overflow-y: auto !important;
-        border: 5px solid;
+        overflow-y: scroll;
     }
+
+body{
+    overflow-y: hidden;
+     overflow-x: hidden;
+    }
+html {
+    scrollbar-color: var(--light-purple) var(--off-white);
+    scrollbar-width: auto;
+}
 
     .content {
         width: 83vw;
+        height: 95vh;
+        border: 5px solid var(--dark-pink);
     }
 
     .column-sections {
@@ -874,21 +914,39 @@ hr {
         align-items: center;
     }
 
-
-    .column-sections > header {
+ .column-sections > header {
         position: static;
         transform: none;
         order: 1;
     }
 
     #about-heading {
-        font-size: 3rem;
+/*min preferred max*/
+        font-size: clamp(1.6rem, 8vw,2.25rem);
         white-space: nowrap;
         margin: 1rem 0 0;
-        border: 2px solid black;
+
+    }
+#about-heading::before {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+}
+#about-heading::after {
+    font-size: clamp(0.75rem, 3.5vw, 1rem);
+    right: -5%;
+    bottom: 5%;
+}
+/* Cartoon + speech bubble */
+
+    #cartoon{
+    max-height: clamp(90px, 20vh, 150px);
     }
 
-    /* Cartoon + speech bubble */
+    .speech h3{
+        font-size: clamp(1.25rem, 6vw, 1.75rem);
+    }
+    .speech p {
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
+    }
 
     .third_column {
         order: 2;
@@ -902,25 +960,24 @@ hr {
         height: fit-content;
     }
 
-    #cartoon {
-        width: 90%;
-
-    }
-
-
     /* Technical Skills */
 
     .second-column {
         order: 3;
-        width: 90%;
+        width: 95%;
         height: fit-content;
         padding-top: 0;
+
     }
+    .second-column h2, .first-column h2 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    padding: clamp(0.5rem, 2vh, 1rem) 0.5rem;
+}
 
     .programming-skills {
         width: 95%;
         height: fit-content;
-        padding: 6rem 0;
+        padding: clamp(1.5rem ,6vh, 3rem) 0;
     }
 
     /* Education */
@@ -930,15 +987,27 @@ hr {
         width: 90%;
         height: fit-content;
     }
+    .first-column .list li{
+        margin-bottom: 1rem;
 
-    .web-dev {
-        flex-wrap: wrap;
+    }
+    .first-column h3{
+        margin-bottom: 1rem;
     }
 
-    .second-column h2,
-    .first-column h2 {
-        font-size: 1.5rem;
-        padding: 0.15em 1.15em;
+
+    .web-dev{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    place-items: center;
+    }
+
+    .list li {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+}
+    .second-column h3, .first-column h3{
+       padding: 0.5rem;
     }
 
     #flower-decoration-1,
@@ -948,45 +1017,60 @@ hr {
 
     /* Tabs */
 
-    .tabs {
-        flex-direction: row;
-        transform: rotate(90deg);
-        justify-content: center;
-        align-items: flex-start;
-        position: absolute;
-        right: -25%;
-        top: 26%;
-        margin-top: 5px;
-    }
+.tabs {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 48.4%;
+    right: -3.79%;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    margin-top: 0;
+}
 
-    .tab {
-        border: 5px solid;
-        font-size: 1.1rem;
-        padding: 10px;
-        margin: 0;
-        width: fit-content;
-    }
+.tab {
+    border: 5px solid;
+    font-size: 4vw;
+    padding: 2.3vw;
+    margin: 0;
+    height: 11.64vw;
+    width: 15.06vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+}
 
+.social-list {
+    margin-top: 0;
+}
 
-@media (max-width: 480px) and (orientation: portrait) {
+/*--------------------------------------------------min-width: 480px → Large phones----------------------------------------*/
+
+@media (min-width: 480px) and (max-width: 767.98px){
 
     .content,
     .column-sections {
         overflow-y: auto !important;
-        border: 5px solid;
     }
 
     .content {
         width: 83vw;
+        height: clamp(75vh, 90vh, 95vh);
+        border: 10px solid;
     }
-
+    html {
+        scrollbar-color: var(--light-purple) var(--off-white);
+        scrollbar-width: auto;
+    }
     .column-sections {
         flex-direction: column;
         gap: 1rem;
         position: relative;
         align-items: center;
     }
-
 
     .column-sections > header {
         position: static;
@@ -995,14 +1079,21 @@ hr {
     }
 
     #about-heading {
-        font-size: 3rem;
+        font-size: clamp(2rem, 7vw, 3rem);
         white-space: nowrap;
         margin: 1rem 0 0;
-        border: 2px solid black;
+    }
+
+    #about-heading::before {
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+    }
+    #about-heading::after {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        right: -5%;
+        bottom: 5%;
     }
 
     /* Cartoon + speech bubble */
-
     .third_column {
         order: 2;
         width: 90%;
@@ -1015,14 +1106,21 @@ hr {
         height: fit-content;
     }
 
-    #cartoon {
-        width: 90%;
+#cartoon {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: clamp(120px, 22vh, 180px);
+}
 
+    .speech h3 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    .speech p {
+        font-size: clamp(0.95rem, 3vw, 1.1rem);
     }
 
-
     /* Technical Skills */
-
     .second-column {
         order: 3;
         width: 90%;
@@ -1033,25 +1131,174 @@ hr {
     .programming-skills {
         width: 95%;
         height: fit-content;
-        padding: 6rem 0;
+        padding: clamp(2rem, 8vh, 6rem) 0;
     }
 
     /* Education */
-
     .first-column {
         order: 4;
         width: 90%;
         height: fit-content;
     }
 
-    .web-dev {
-        flex-wrap: wrap;
-    }
-
     .second-column h2,
     .first-column h2 {
-        font-size: 1.5rem;
-        padding: 0.15em 1.15em;
+        font-size: clamp(1.3rem, 4.5vw, 1.5rem);
+        padding: clamp(0.6rem, 2vh, 1rem) 1rem;
+    }
+
+    .list li {
+        font-size: clamp(0.9rem, 2.8vw, 1rem);
+    }
+
+    #flower-decoration-1,
+    #flower-decoration-2 {
+        color: transparent;
+    }
+
+.tabs {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 51%;
+    right: -1%;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    margin-top: 0;
+}
+
+.tab {
+    border: 5px solid;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    padding: 2.3vw;
+    margin: 0;
+    height: 8vw;
+    width: 15.06vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+}
+
+
+/*--------------------------------------------------min-width 768px → Tablets----------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+
+    .content,
+    .column-sections {
+        overflow-y: auto !important;
+    }
+
+    .content {
+        width: 83vw;
+        height: clamp(75vh, 90vh, 95vh);
+        border: 10px solid;
+    }
+
+    html {
+        scrollbar-color: var(--light-purple) var(--off-white);
+        scrollbar-width: auto;
+    }
+
+    .column-sections {
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        align-items: center;
+    }
+
+    .column-sections > header {
+        position: static;
+        transform: none;
+        order: 1;
+    }
+
+    #about-heading {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        white-space: nowrap;
+        margin: 1rem 0 0;
+    }
+
+    #about-heading::before {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+    }
+
+    #about-heading::after {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        right: -5%;
+        bottom: 5%;
+    }
+
+    /* Cartoon + speech bubble */
+
+    .third_column {
+        order: 2;
+        width: 85%;
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    .greeting {
+        width: 85%;
+        height: fit-content;
+    }
+
+    #cartoon {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: clamp(150px, 25vh, 220px);
+    }
+
+    .speech h3 {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+    }
+
+    .speech p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+
+    /* Technical Skills */
+
+    .second-column {
+        order: 3;
+        width: 85%;
+        height: fit-content;
+        padding-top: 0;
+    }
+
+    .programming-skills {
+        width: 95%;
+        height: fit-content;
+        padding: clamp(2rem, 6vh, 4rem) 1rem;
+    }
+
+    /* Education */
+
+    .first-column {
+        order: 4;
+        width: 85%;
+        height: fit-content;
+    }
+
+.first-column h3{
+    margin: 0.5rem;
+}
+
+.first-column .list li{
+    margin-bottom: 1.25rem;
+}
+    .second-column h2,
+    .first-column h2 {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+        padding: clamp(0.6rem, 1.5vh, 1rem) 1rem;
+    }
+
+    .list li {
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
     }
 
     #flower-decoration-1,
@@ -1063,67 +1310,71 @@ hr {
 
     .tabs {
         flex-direction: row;
-        transform: rotate(90deg);
         justify-content: center;
         align-items: flex-start;
         position: absolute;
-        right: -25%;
-        top: 26%;
-        margin-top: 5px;
+        top: 51%;
+        right: -1%;
+        transform: rotate(90deg);
+        transform-origin: top right;
+        margin-top: 0;
     }
 
     .tab {
         border: 5px solid;
-        font-size: 1.1rem;
-        padding: 10px;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        padding:  1.5vw;
         margin: 0;
-        width: fit-content;
+        height: 8vw;
+        width: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
     }
 }
+
+
+
+
+
+
+
 /*----------------contact page--------------------*/
 .content.contact-content {
     border: 5px solid var(--dark-purple);
     padding: 10%;
     overflow-y: scroll;
 }
-.contact-page{
+.contact-page {
     flex-direction: column;
     align-items: center;
     width: 100%;
     border: none;
-
 }
 
 .post-card {
     width: 100%;
     padding: 10%;
     margin-top: 0%;
-
 }
-#contact-page-h1{
-    font-size: 3.5rem;
+#contact-page-h1 {
+    font-size: clamp(2.25rem, 8vw, 3.5rem);
     color: var(--dark-pink);
     text-shadow: 2px 2px 2px var(--dark-purple);
     position: static;
 }
 
-.address-lines{
+.address-lines {
     color: transparent;
     position: absolute;
     top: 50%;
 }
 
-#stamp{
-    font-size: 1.5rem;
+#stamp {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
     height: 15%;
     width: 15%;
 }
 
 /*------------------------------------portfolio page----------------------*/
-
-
-
-
-
-
-}
