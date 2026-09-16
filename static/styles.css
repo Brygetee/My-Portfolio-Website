@@ -43,7 +43,7 @@ body {
     max-width: 90vw;
     margin: 25px auto;
     position: relative;
-    background-color: orange;
+
 }
 
 .tabs {
@@ -60,7 +60,7 @@ body {
     cursor: pointer;
     margin-right: 5px;
     z-index: 1;
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 2.2vw, 2rem);
     color: var(--dark-pink);
     background: var(--off-white);
 }
@@ -89,7 +89,7 @@ body {
 }
 
 .content {
-    border: 15px solid var(--dark-pink);
+    border: 12px solid var(--dark-pink);
     border-radius: 8px;
     background: var(--light-pink);
     height: 85vh;
@@ -123,12 +123,12 @@ body {
 .second-column h2,
 .third_column h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     background: var(--off-white);
     border-radius: 20px;
     display: inline-block;
     width: fit-content;
-    padding: 0.15em 1.15em;
+    padding: 0.15em 0.5em;
     margin: 10px auto;
 }
 
@@ -140,29 +140,28 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, -70%);
-    margin: 0;
+    margin-bottom: 0;
     white-space: nowrap;
     text-transform: uppercase;
 }
 
 .first-column h3,
 .second-column h3 {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     text-align: center;
     text-shadow: 1px 1px 0 var(--off-white);
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
     width: fit-content;
     text-transform: uppercase;
     border: 5px solid var(--light-purple);
     background-color: var(--off-white);
     border-radius: 999px;
     padding: 0.5rem;
+    text-wrap: nowrap;
 
 }
 .pink-highlight{
     color: var(--dark-pink);
-
-
 
 }
 .first-column ul li::marker, .second-column ul li::marker  {
@@ -176,12 +175,13 @@ body {
 }
 
 .first-column .list li {
-    margin-bottom: 0.25rem;
+    margin: 0.25rem;
     line-height: 1.2;
 }
 .list li {
     margin-bottom: 0.25rem;
     color: var(--dark-purple);
+    font-size: clamp(0.8rem, 1.1vw, 1.25rem);
 }
 
 /*-----------------------------------------H1-----------------------------------------*/
@@ -196,7 +196,7 @@ body {
 
 #about-heading {
     color: var(--text-pink);
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 1;
     text-align: center;
     margin: 0;
@@ -250,10 +250,13 @@ body {
     height: 95%;
     box-shadow: 0 8px 15px rgba(251, 111, 146, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 3.5rem 1rem 1.5rem;
-    margin: 1rem;
+    padding: 0
+             clamp(0, 1.2vw, 1.25rem)
+             clamp(1rem, 1.5vw, 1.5rem);
+    padding-top: clamp(2.5rem, 3vw, 7rem);
+    margin: clamp(0.5rem, 1vw, 1rem);
     justify-content: flex-start;
-    width: 25%;
+    width: 27%;
     position: relative;
     order: 1;
 }
@@ -265,7 +268,7 @@ body {
 
 .first-column h2 {
     border: 10px solid pink;
-    margin: 1rem auto;
+    margin: clamp(0.5rem, 1vw, 1rem) auto;
 }
 
 .first-column h3 {
@@ -287,7 +290,7 @@ body {
 
 .second-column {
     height: 100%;
-    width: 50%;
+    width: 46%;
     order: 3;
     position: relative;
 }
@@ -342,7 +345,7 @@ body {
     width: 95%;
     margin: auto 0 1rem 0;
     height: 70%;
-    padding: 4rem 1rem 1rem 1rem;
+    padding: 4rem 1rem 1rem;
 }
 
 .programming-skills:hover {
@@ -396,7 +399,7 @@ body {
 .third_column {
     justify-content: center;
 
-    width: 25%;
+    width: 27%;
     height: 95%;
     order: 3;
 }
@@ -1007,7 +1010,7 @@ html {
     font-size: clamp(0.85rem, 3.5vw, 1rem);
 }
     .second-column h3, .first-column h3{
-       padding: 0.5rem;
+       padding: clamp(0.5rem 1.5vw 1rem);
     }
 
     #flower-decoration-1,
@@ -1333,13 +1336,36 @@ html {
         box-sizing: border-box;
     }
 }
+/*fix tabs
+@media (orientation: landscape) and (max-width: 1023.98px) {
+
+    .tabs {
+        top: 50%;
+        right: -2%;
+    }
+
+    .tab {
+        font-size: clamp(0.9rem, 3vh, 1.5rem);
+        padding: clamp(0.5rem, 1.5vh, 1rem) clamp(1rem, 3vh, 1.75rem);
+        height: clamp(2rem, 9vh, 3.5rem);
+        width: clamp(6rem, 22vw, 10rem);
+    }
+}
+*/
 
 
+@media (orientation: landscape) and (max-height: 500px) {
+    .tab {
+        flex-direction: column;
+        gap: 0;
+        padding: calc(2.3vw + 0.20rem);
+    }
 
-
-
-
-
+    .tab-label {
+        font-size: 0.70rem;
+        line-height: 0.9;
+    }
+}
 /*----------------contact page--------------------*/
 .content.contact-content {
     border: 5px solid var(--dark-purple);
