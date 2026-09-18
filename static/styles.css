@@ -1,6 +1,4 @@
 /*-----------------------------------------General Page Styles-----------------------------------------*/
-/*-----Colors-----*/
-
 :root {
     --dark-pink: #f284aa;
     --light-pink: #ffe5ec;
@@ -16,15 +14,11 @@ html {
     scrollbar-color: var(--off-white) var(--light-purple);
 }
 
-/*-----Fonts-----*/
-
 .jua-regular {
     font-family: "Jua", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-
-/*-----Body Styles-----*/
 
 * {
     box-sizing: border-box;
@@ -111,16 +105,16 @@ body {
 
 /*---------- Shared Column Section Styles--------*/
 
-.first-column,
-.second-column,
+.education-column,
+.heading-and-technical-skills-column,
 .third_column {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.first-column h2,
-.second-column h2,
+.education-column h2,
+.heading-and-technical-skills-column h2,
 .third_column h2 {
     text-align: center;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
@@ -134,8 +128,8 @@ body {
 
 /*h2s sit on top of the middle of the dashed border*/
 
-.first-column h2,
-.second-column h2 {
+.education-column h2,
+.heading-and-technical-skills-column h2 {
     position: absolute;
     top: 0;
     left: 50%;
@@ -145,8 +139,8 @@ body {
     text-transform: uppercase;
 }
 
-.first-column h3,
-.second-column h3 {
+.education-column h3,
+.heading-and-technical-skills-column h3 {
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     text-align: center;
     text-shadow: 1px 1px 0 var(--off-white);
@@ -164,7 +158,7 @@ body {
     color: var(--dark-pink);
 
 }
-.first-column ul li::marker, .second-column ul li::marker  {
+.education-column ul li::marker, .heading-and-technical-skills-column ul li::marker  {
     color: var(--light-purple);
 }
 
@@ -174,12 +168,12 @@ body {
     margin: 0.25rem 0;
 }
 
-.first-column .list li {
+.education-column .list li {
     margin: 0.25rem;
     line-height: 1.2;
 }
 .list li {
-    margin-bottom: 0.25rem;
+    margin-bottom: clamp(0,3vw ,0.25rem);
     color: var(--dark-purple);
     font-size: clamp(0.8rem, 1.1vw, 1.25rem);
 }
@@ -196,11 +190,11 @@ body {
 
 #about-heading {
     color: var(--text-pink);
-    font-size: 2rem;
+    font-size: clamp(2rem, 4vw, 6rem);
     line-height: 1;
     text-align: center;
     margin: 0;
-    padding: 1rem;
+    padding: 0.5rem 1rem 1rem;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
@@ -214,7 +208,7 @@ body {
     content: "⭑★⭑";
     position: absolute;
     color: var(--light-purple);
-    font-size: 2rem;
+    font-size: clamp(1rem, 2vw, 2rem);
     left: 0;
     top: 1rem;
     transform: rotate(-25deg);
@@ -243,7 +237,7 @@ body {
 
 /*-----------------------------------------First Column Styles-----------------------------------------*/
 
-.first-column {
+.education-column {
     background: white;
     border: 10px dashed #ffb3c6;
     border-radius: 10px;
@@ -254,25 +248,24 @@ body {
              clamp(0, 1.2vw, 1.25rem)
              clamp(1rem, 1.5vw, 1.5rem);
     padding-top: clamp(2.5rem, 3vw, 7rem);
-    margin: clamp(0.5rem, 1vw, 1rem);
+    margin: clamp(1.5rem, 1vw, 2rem);
     justify-content: flex-start;
     width: 27%;
     position: relative;
     order: 1;
-}
-
-.first-column:hover {
-    transform: translateY(-5px);
     box-shadow: 6px 10px 15px var(--pink-shadow);
 }
+.education-column:hover {
+    transform: translateY(-5px);
+}
 
-.first-column h2 {
+.education-column h2 {
     border: 10px solid pink;
     margin: clamp(0.5rem, 1vw, 1rem) auto;
 }
 
-.first-column h3 {
-    margin: 0;
+.education-column h3 {
+    margin: 0.25rem;
 }
 
 .certification-link{
@@ -288,17 +281,18 @@ body {
 }
 /*-----------------------------------------Second Column Styles-----------------------------------------*/
 
-.second-column {
+.heading-and-technical-skills-column {
     height: 100%;
     width: 46%;
     order: 3;
     position: relative;
+
 }
 
-.second-column h3 {
+.heading-and-technical-skills-column h3 {
     color: var(--dark-pink);
 }
-.second-column::before, .second-column::after{
+.heading-and-technical-skills-column::before, .heading-and-technical-skills-column::after{
     content: "";
     color: var(--dark-pink);
     font-size: 10rem;
@@ -307,14 +301,11 @@ body {
 
 }
 
-.second-column::before {
+.heading-and-technical-skills-column::before {
     bottom: -10%;
     right: 20%;
 }
 
-.second-column::after {
-
-}
 
 
 @keyframes sparkle{
@@ -331,69 +322,63 @@ body {
 
 
 
-.programming-skills {
+.technical-skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: space-between;
+    align-items: center;
     position: relative;
     background: white;
     border: 10px dashed var(--light-purple);
     border-radius: 10px;
     color: var(--dark-purple);
-    box-shadow: 0 8px 15px rgba(207, 186, 240, .35);
-    width: 95%;
+    box-shadow: 6px 10px 15px var(--light-purple);
+    width: 97%;
     margin: auto 0 1rem 0;
     height: 70%;
-    padding: 4rem 1rem 1rem;
+    padding: 2rem 1rem 1rem;
 }
 
-.programming-skills:hover {
+.technical-skills:hover {
     transform: translateY(-5px);
-    box-shadow: 6px 10px 15px var(--light-purple);
 }
 
-.second-column h2 {
+.technical-skills h2 {
     border: 10px solid var(--light-purple);
     margin: 1rem auto;
     color: var(--dark-purple);
 }
 
-.second-column h3 {
+.heading-and-technical-skills-column h3 {
     margin: 1rem 0;
     text-align: center;
     align-self: center;
     font-size: 1.25rem;
 }
 
-.second-column h4 {
+.heading-and-technical-skills-column h4 {
     margin: 0;
     text-align: center;
     color: var(--text-pink);
     text-transform: uppercase;
 }
 
-.web-dev,
-.languages,
-.additional {
-    display: flex;
-    color: var(--dark-purple);
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+
+.web-dev {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    justify-items: center;
+    color: var(--dark-purple);
 }
 
 .web-dev .list, {
     color: var(--dark-purple);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     align-items: center;
 
 }
 
-#spoken-languages{
-    margin-top: -10px;
-}
 /*-----------------------------------------Third Column-----------------------------------------*/
 
 .third_column {
@@ -454,14 +439,15 @@ body {
     height: 100%;
     width: auto;
     max-height: 150px;
-    border: 10px dashed pink;
+    border: 10px dashed #ffb3c6;
     border-radius: 10px;
     display: block;
     margin: 0 auto;
+    box-shadow: 6px 10px 15px pink;
 }
 
 #cartoon:hover {
-    box-shadow: 6px 10px 15px pink;
+
     transform: translateY(-1px);
 }
 
@@ -469,7 +455,7 @@ body {
 
 .speech {
     position: relative;
-    width: 100%;
+    width: 95%;
     padding: 1rem 1rem 0;
     text-align: center;
     background-color: white;
@@ -478,6 +464,7 @@ body {
     box-shadow: 2px 2px 4px #888;
     margin: 0 auto 1rem auto;
     color: var(--text-pink);
+
 }
 
 .speech h3 {
@@ -890,15 +877,18 @@ hr {
 */
 /*-------------------------------------------max-width: 479px  → Small phones-------------------------------------*/
 @media (max-width: 479.98px){
-    .content,
-    .column-sections {
+    .content{
         overflow-y: scroll;
     }
-
+.column-sections {
+    overflow-y: visible;
+    overflow-x: hidden;
+}
 body{
     overflow-y: hidden;
      overflow-x: hidden;
     }
+
 html {
     scrollbar-color: var(--light-purple) var(--off-white);
     scrollbar-width: auto;
@@ -965,19 +955,19 @@ html {
 
     /* Technical Skills */
 
-    .second-column {
+    .heading-and-technical-skills-column {
         order: 3;
         width: 95%;
         height: fit-content;
         padding-top: 0;
 
     }
-    .second-column h2, .first-column h2 {
+    .heading-and-technical-skills-column h2, .education-column h2 {
     font-size: clamp(1.1rem, 5vw, 1.5rem);
     padding: clamp(0.5rem, 2vh, 1rem) 0.5rem;
 }
 
-    .programming-skills {
+    .technical-skills {
         width: 95%;
         height: fit-content;
         padding: clamp(1.5rem ,6vh, 3rem) 0;
@@ -985,16 +975,16 @@ html {
 
     /* Education */
 
-    .first-column {
+    .education-column {
         order: 4;
         width: 90%;
         height: fit-content;
     }
-    .first-column .list li{
+    .education-column .list li{
         margin-bottom: 1rem;
 
     }
-    .first-column h3{
+    .education-column h3{
         margin-bottom: 1rem;
     }
 
@@ -1008,15 +998,12 @@ html {
 
     .list li {
     font-size: clamp(0.85rem, 3.5vw, 1rem);
+
 }
-    .second-column h3, .first-column h3{
+    .heading-and-technical-skills-column h3, .education-column h3{
        padding: clamp(0.5rem 1.5vw 1rem);
     }
 
-    #flower-decoration-1,
-    #flower-decoration-2 {
-        color: transparent;
-    }
 
     /* Tabs */
 
@@ -1056,7 +1043,7 @@ html {
 
     .content,
     .column-sections {
-        overflow-y: auto !important;
+        overflow-y: scroll;
     }
 
     .content {
@@ -1124,28 +1111,35 @@ html {
     }
 
     /* Technical Skills */
-    .second-column {
+    .heading-and-technical-skills-column {
         order: 3;
         width: 90%;
         height: fit-content;
         padding-top: 0;
     }
 
-    .programming-skills {
+    .technical-skills {
         width: 95%;
         height: fit-content;
         padding: clamp(2rem, 8vh, 6rem) 0;
     }
+    .web-dev{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    place-items: center;
+    }
 
     /* Education */
-    .first-column {
+    .education-column {
         order: 4;
         width: 90%;
         height: fit-content;
     }
 
-    .second-column h2,
-    .first-column h2 {
+    .heading-and-technical-skills-column h2,
+    .education-column h2 {
         font-size: clamp(1.3rem, 4.5vw, 1.5rem);
         padding: clamp(0.6rem, 2vh, 1rem) 1rem;
     }
@@ -1154,10 +1148,7 @@ html {
         font-size: clamp(0.9rem, 2.8vw, 1rem);
     }
 
-    #flower-decoration-1,
-    #flower-decoration-2 {
-        color: transparent;
-    }
+
 
 .tabs {
     flex-direction: row;
@@ -1266,14 +1257,14 @@ html {
 
     /* Technical Skills */
 
-    .second-column {
+    .heading-and-technical-skills-column {
         order: 3;
         width: 85%;
         height: fit-content;
         padding-top: 0;
     }
 
-    .programming-skills {
+    .technical-skills {
         width: 95%;
         height: fit-content;
         padding: clamp(2rem, 6vh, 4rem) 1rem;
@@ -1281,21 +1272,21 @@ html {
 
     /* Education */
 
-    .first-column {
+    .education-column {
         order: 4;
         width: 85%;
         height: fit-content;
     }
 
-.first-column h3{
+.education-column h3{
     margin: 0.5rem;
 }
 
-.first-column .list li{
+.education-column .list li{
     margin-bottom: 1.25rem;
 }
-    .second-column h2,
-    .first-column h2 {
+    .heading-and-technical-skills-column h2,
+    .education-column h2 {
         font-size: clamp(1.5rem, 3.5vw, 2rem);
         padding: clamp(0.6rem, 1.5vh, 1rem) 1rem;
     }

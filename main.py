@@ -28,3 +28,6 @@ if __name__ == '__main__':
 # TODO 1: make certificate links open on blanks
 #Todo 2: correct contact page
 #Todo 3: add favicon to title
+#Todo 4: 414x 896  or 390x 844 not working
+#Todo 5: iphone xr links need to look like iphone 12
+
