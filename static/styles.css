@@ -107,7 +107,7 @@ body {
 
 .education-column,
 .heading-and-technical-skills-column,
-.third_column {
+.speech-bubble-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,7 +115,7 @@ body {
 
 .education-column h2,
 .heading-and-technical-skills-column h2,
-.third_column h2 {
+.speech-bubble-column h2 {
     text-align: center;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     background: var(--off-white);
@@ -379,13 +379,12 @@ body {
 
 }
 
-/*-----------------------------------------Third Column-----------------------------------------*/
+/*-----------------------------------------Speech Column-----------------------------------------*/
 
-.third_column {
+.speech-bubble-column {
     justify-content: center;
-
     width: 27%;
-    height: 95%;
+    height: 80%;
     order: 3;
 }
 
@@ -414,7 +413,10 @@ body {
     text-decoration: none;
     color: var(--text-pink);
     display: inline-block;
+    margin: 0.25rem;
     transition: .25s;
+    font-size: clamp(.75rem, 2vw, 1rem);
+    text-wrap: nowrap;
 }
 
 .social-list li a:hover {
@@ -427,6 +429,8 @@ body {
     align-items: center;
     flex-direction: column;
     width: 100%;
+    justify-items: center;
+
 }
 
 .greeting a {
@@ -456,7 +460,7 @@ body {
 .speech {
     position: relative;
     width: 95%;
-    padding: 1rem 1rem 0;
+    padding: 0.5rem 0.5rem 0;
     text-align: center;
     background-color: white;
     border: 8px solid var(--dark-pink);
@@ -464,17 +468,19 @@ body {
     box-shadow: 2px 2px 4px #888;
     margin: 0 auto 1rem auto;
     color: var(--text-pink);
+    height: 70%;
 
 }
 
 .speech h3 {
-    font-size: 2rem;
+    font-size: clamp(1rem, 2vw ,2rem);
     margin: 0 auto;
     text-align: center;
     color: var(--dark-pink);
 }
 .speech p {
-    margin-bottom: 0;
+    margin: 0.5rem;
+    font-size: clamp(0.5rem, 1.5vw ,1.25rem);
 }
 /* triangle outline */
 
@@ -678,13 +684,13 @@ hr {
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    padding: 1rem;
+    padding: 0;
 }
 
 .contact-socials h3 {
     font-size: 1.6rem;
     color: var(--dark-pink);
-    margin: 1rem 0 1.5rem;
+    margin: 1rem auto 1.5rem;
     text-align: center;
     position: relative;
     font-weight: normal;
@@ -941,11 +947,12 @@ html {
         font-size: clamp(0.85rem, 3.5vw, 1rem);
     }
 
-    .third_column {
+    .speech-bubble-column {
         order: 2;
         width: 90%;
         height: fit-content;
         margin-bottom: 2rem;
+
     }
 
     .greeting {
@@ -1034,7 +1041,10 @@ html {
 }
 
 .social-list {
-    margin-top: 0;
+    margin: 0 auto 1rem;
+    padding: 0;
+    text-align: center;
+    list-style: none;
 }
 
 /*--------------------------------------------------min-width: 480px → Large phones----------------------------------------*/
@@ -1084,7 +1094,7 @@ html {
     }
 
     /* Cartoon + speech bubble */
-    .third_column {
+    .speech-bubble-column {
         order: 2;
         width: 90%;
         height: fit-content;
@@ -1148,7 +1158,10 @@ html {
         font-size: clamp(0.9rem, 2.8vw, 1rem);
     }
 
-
+    #flower-decoration-1,
+    #flower-decoration-2 {
+        color: transparent;
+    }
 
 .tabs {
     flex-direction: row;
@@ -1228,7 +1241,7 @@ html {
 
     /* Cartoon + speech bubble */
 
-    .third_column {
+    .speech-bubble-column {
         order: 2;
         width: 85%;
         height: fit-content;
@@ -1325,6 +1338,7 @@ html {
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
+        color: green;
     }
 }
 /*fix tabs
@@ -1346,10 +1360,16 @@ html {
 
 
 @media (orientation: landscape) and (max-height: 500px) {
+    .tabs{
+
+    }
     .tab {
         flex-direction: column;
         gap: 0;
-        padding: calc(2.3vw + 0.20rem);
+        padding: calc(2.3vw + 1rem);
+
+
+
     }
 
     .tab-label {
