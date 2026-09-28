@@ -417,6 +417,7 @@ body {
     transition: .25s;
     font-size: clamp(.75rem, 2vw, 1rem);
     text-wrap: nowrap;
+    padding: clamp(0.5 rem, 2vw, 2rem);
 }
 
 .social-list li a:hover {
@@ -937,7 +938,7 @@ html {
 /* Cartoon + speech bubble */
 
     #cartoon{
-    max-height: clamp(90px, 20vh, 150px);
+    max-height: clamp(125px, 20vh, 200px);
     }
 
     .speech h3{
@@ -951,7 +952,7 @@ html {
         order: 2;
         width: 90%;
         height: fit-content;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
     }
 
@@ -977,7 +978,7 @@ html {
     .technical-skills {
         width: 95%;
         height: fit-content;
-        padding: clamp(1.5rem ,6vh, 3rem) 0;
+        padding: clamp(3rem ,6vh, 6rem) 0;
     }
 
     /* Education */
@@ -993,6 +994,7 @@ html {
     }
     .education-column h3{
         margin-bottom: 1rem;
+        text-wrap: wrap;
     }
 
 
@@ -1019,7 +1021,7 @@ html {
     justify-content: center;
     align-items: flex-start;
     position: absolute;
-    top: 48.4%;
+    top: 58%;
     right: -3.79%;
     transform: rotate(90deg);
     transform-origin: top right;
@@ -1028,24 +1030,28 @@ html {
 
 .tab {
     border: 5px solid;
-    font-size: 4vw;
-    padding: 2.3vw;
+    font-size: 3.5vw;
+    padding: 2.3vw 4vw;
     margin: 0;
     height: 11.64vw;
-    width: 15.06vh;
+    width: 18.3vh;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
 }
-}
-
 .social-list {
     margin: 0 auto 1rem;
     padding: 0;
     text-align: center;
     list-style: none;
 }
+.contact-socials{
+margin: 1rem auto 2.5rem;
+}
+}
+
+
 
 /*--------------------------------------------------min-width: 480px → Large phones----------------------------------------*/
 
@@ -1168,8 +1174,8 @@ html {
     justify-content: center;
     align-items: flex-start;
     position: absolute;
-    top: 51%;
-    right: -1%;
+    top: 61%;
+    right: -4%;
     transform: rotate(90deg);
     transform-origin: top right;
     margin-top: 0;
@@ -1177,11 +1183,11 @@ html {
 
 .tab {
     border: 5px solid;
-    font-size: clamp(1rem, 3.5vw, 1.25rem);
-    padding: 2.3vw;
+    font-size: 3.5vw;
+    padding: clamp(8px, 2.3vw, 10px) 4vw;
     margin: 0;
-    height: 8vw;
-    width: 15.06vh;
+    height: 11.64vw;
+    width: 18vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1362,13 +1368,16 @@ html {
 @media (orientation: landscape) and (max-height: 500px) {
     .tabs{
 
+    top: 0%;
+    left: -1%;
     }
     .tab {
         flex-direction: column;
         gap: 0;
-        padding: calc(2.3vw + 1rem);
-
-
+        padding: 0;
+        width: 15vw;
+        height: 15.06vh;
+        text-wrap: nowrap;
 
     }
 
