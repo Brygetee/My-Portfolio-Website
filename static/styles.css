@@ -1,4 +1,18 @@
-/*-----------------------------------------General Page Styles-----------------------------------------*/
+/* ==========================================================
+   TABLE OF CONTENTS
+   1. Variables & Base
+   2. Folder & Tabs
+   3. About Page
+   4. Contact Page
+   5. Portfolio Page
+   6. Responsive
+   ========================================================== */
+
+
+/* ==========================================================
+   1. VARIABLES & BASE
+   ========================================================== */
+
 :root {
     --dark-pink: #f284aa;
     --light-pink: #ffe5ec;
@@ -26,24 +40,31 @@ html {
 }
 
 body {
-    background-color: lavender;;
+    background-color: lavender;
     background-repeat: repeat;
     color: var(--dark-pink);
 }
 
-/*----------------------------------------Tab Styles & Folder Styles------------------------------------------------*/
+
+/* ==========================================================
+   2. FOLDER & TABS
+   ========================================================== */
 
 .folder-container {
     max-width: 90vw;
     margin: 25px auto;
     position: relative;
-
 }
 
 .tabs {
     display: flex;
     margin-bottom: -1px;
     justify-content: flex-end;
+}
+
+.tabs a {
+    display: flex;
+    text-decoration: none;
 }
 
 .tab {
@@ -57,11 +78,6 @@ body {
     font-size: clamp(1.25rem, 2.2vw, 2rem);
     color: var(--dark-pink);
     background: var(--off-white);
-}
-
-.tabs a {
-    display: flex;
-    text-decoration: none;
 }
 
 .tab.about {
@@ -87,10 +103,16 @@ body {
     border-radius: 8px;
     background: var(--light-pink);
     height: 85vh;
+    position: relative;
     overflow: hidden;
 }
 
-/*-----------------------------------------About Me Page styles-----------------------------------------*/
+
+/* ==========================================================
+   3. ABOUT PAGE
+   ========================================================== */
+
+/* ---------- Layout ---------- */
 
 .column-sections {
     height: 100%;
@@ -103,7 +125,7 @@ body {
     position: relative;
 }
 
-/*---------- Shared Column Section Styles--------*/
+/* ---------- Shared Column Styles ---------- */
 
 .education-column,
 .heading-and-technical-skills-column,
@@ -125,8 +147,6 @@ body {
     padding: 0.15em 0.5em;
     margin: 10px auto;
 }
-
-/*h2s sit on top of the middle of the dashed border*/
 
 .education-column h2,
 .heading-and-technical-skills-column h2 {
@@ -152,13 +172,16 @@ body {
     border-radius: 999px;
     padding: 0.5rem;
     text-wrap: nowrap;
-
 }
-.pink-highlight{
-    color: var(--dark-pink);
 
+.education-column h3 {
+    color: var(--dark-purple);
+    border: none;
+    background-color: transparent;
 }
-.education-column ul li::marker, .heading-and-technical-skills-column ul li::marker  {
+
+.education-column ul li::marker,
+.heading-and-technical-skills-column ul li::marker {
     color: var(--light-purple);
 }
 
@@ -171,14 +194,16 @@ body {
 .education-column .list li {
     margin: 0.25rem;
     line-height: 1.2;
+    color: var(--dark-pink);
 }
+
 .list li {
-    margin-bottom: clamp(0,3vw ,0.25rem);
+    margin-bottom: clamp(0rem,3vw ,0.25rem);
     color: var(--dark-purple);
     font-size: clamp(0.8rem, 1.1vw, 1.25rem);
 }
 
-/*-----------------------------------------H1-----------------------------------------*/
+/* ---------- Page Heading (H1) ---------- */
 
 .column-sections > header {
     position: absolute;
@@ -200,8 +225,6 @@ body {
     text-transform: uppercase;
     text-shadow: 3px 3px 3px var(--light-purple);
     -webkit-text-stroke: 1px var(--dark-purple);
-
-
 }
 
 #about-heading::before {
@@ -217,7 +240,6 @@ body {
     animation-duration: 3s;
     animation-iteration-count: infinite;
     -webkit-text-stroke: 2px var(--dark-purple);
-
 }
 
 #about-heading::after {
@@ -235,17 +257,28 @@ body {
     -webkit-text-stroke: 2px var(--dark-purple);
 }
 
-/*-----------------------------------------First Column Styles-----------------------------------------*/
+@keyframes sparkle {
+    0% {
+        transform: scale(1) rotate(-25deg);
+    }
+    50% {
+        transform: rotate(-25deg) scale(1.25);
+    }
+    100% {
+        transform: rotate(-25deg) scale(1);
+    }
+}
+
+/* ---------- Education Column ---------- */
 
 .education-column {
     background: white;
     border: 10px dashed #ffb3c6;
     border-radius: 10px;
-    height: 95%;
-    box-shadow: 0 8px 15px rgba(251, 111, 146, 0.18);
+    height: 90%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 0
-             clamp(0, 1.2vw, 1.25rem)
+             clamp(0rem, 1.2vw, 1.25rem)
              clamp(1rem, 1.5vw, 1.5rem);
     padding-top: clamp(2.5rem, 3vw, 7rem);
     margin: clamp(1.5rem, 1vw, 2rem);
@@ -255,6 +288,7 @@ body {
     order: 1;
     box-shadow: 6px 10px 15px var(--pink-shadow);
 }
+
 .education-column:hover {
     transform: translateY(-5px);
 }
@@ -268,59 +302,42 @@ body {
     margin: 0.25rem;
 }
 
-.certification-link{
+.certification-link {
     text-decoration: none;
     color: var(--dark-purple);
-
 }
 
-.certification-link: hover{
+.certification-link:hover {
     transform: translateY(-2px);
     color: var(--dark-pink);
-
 }
-/*-----------------------------------------Second Column Styles-----------------------------------------*/
+
+/* ---------- Technical Skills Column ---------- */
 
 .heading-and-technical-skills-column {
     height: 100%;
     width: 46%;
     order: 3;
     position: relative;
-
 }
 
 .heading-and-technical-skills-column h3 {
     color: var(--dark-pink);
 }
-.heading-and-technical-skills-column::before, .heading-and-technical-skills-column::after{
+
+.heading-and-technical-skills-column::before,
+.heading-and-technical-skills-column::after {
     content: "";
     color: var(--dark-pink);
     font-size: 10rem;
     position: absolute;
     z-index: 500;
-
 }
 
 .heading-and-technical-skills-column::before {
     bottom: -10%;
     right: 20%;
 }
-
-
-
-@keyframes sparkle{
-0%{
-    transform: scale(1) rotate(-25deg);
-}
-50%{
-    transform: rotate(-25deg) scale(1.5);
-}
-100%{
-    transform: rotate(-25deg) scale(1);
-}
-}
-
-
 
 .technical-skills {
     display: flex;
@@ -363,7 +380,6 @@ body {
     text-transform: uppercase;
 }
 
-
 .web-dev {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -372,14 +388,13 @@ body {
     color: var(--dark-purple);
 }
 
-.web-dev .list, {
+.web-dev .list {
     color: var(--dark-purple);
     margin-bottom: 1rem;
     align-items: center;
-
 }
 
-/*-----------------------------------------Speech Column-----------------------------------------*/
+/* ---------- Speech Bubble Column ---------- */
 
 .speech-bubble-column {
     justify-content: center;
@@ -387,8 +402,6 @@ body {
     height: 80%;
     order: 3;
 }
-
-/*-----------------------------------------About Section Styles-----------------------------------------*/
 
 .about-section {
     border-radius: 10px;
@@ -402,7 +415,6 @@ body {
     font-size: 1.3rem;
     margin: 0;
     padding: 0;
-    border: 2px solid red;
 }
 
 .social-list li {
@@ -417,7 +429,6 @@ body {
     transition: .25s;
     font-size: clamp(.75rem, 2vw, 1rem);
     text-wrap: nowrap;
-    padding: clamp(0.5 rem, 2vw, 2rem);
 }
 
 .social-list li a:hover {
@@ -431,7 +442,6 @@ body {
     flex-direction: column;
     width: 100%;
     justify-items: center;
-
 }
 
 .greeting a {
@@ -452,11 +462,8 @@ body {
 }
 
 #cartoon:hover {
-
     transform: translateY(-1px);
 }
-
-/* Speech bubble */
 
 .speech {
     position: relative;
@@ -470,7 +477,6 @@ body {
     margin: 0 auto 1rem auto;
     color: var(--text-pink);
     height: 70%;
-
 }
 
 .speech h3 {
@@ -479,11 +485,11 @@ body {
     text-align: center;
     color: var(--dark-pink);
 }
+
 .speech p {
     margin: 0.5rem;
     font-size: clamp(0.5rem, 1.5vw ,1.25rem);
 }
-/* triangle outline */
 
 .speech::before {
     content: '';
@@ -497,8 +503,6 @@ body {
     border-color: var(--dark-pink) transparent transparent var(--dark-pink);
 }
 
-/* triangle fill */
-
 .speech::after {
     content: '';
     position: absolute;
@@ -511,7 +515,12 @@ body {
     border-color: #fff transparent transparent #fff;
 }
 
-/*-------------------------Form page--------------------------------*/
+
+/* ==========================================================
+   4. CONTACT PAGE
+   ========================================================== */
+
+/* ---------- Layout ---------- */
 
 .content.contact-content {
     border: 10px solid var(--dark-purple);
@@ -531,6 +540,8 @@ body {
     left: 25%;
     top: 10%;
 }
+
+/* ---------- Speech Bubble & Cartoon ---------- */
 
 .contact-speech-bubble {
     display: flex;
@@ -566,6 +577,8 @@ body {
     margin-bottom: 10%;
     object-fit: cover;
 }
+
+/* ---------- Post Card & Form ---------- */
 
 .post-card {
     background-color: #fffdf8;
@@ -678,6 +691,8 @@ hr {
     cursor: pointer;
 }
 
+/* ---------- Contact Socials ---------- */
+
 .contact-socials {
     display: flex;
     flex-direction: column;
@@ -730,7 +745,50 @@ hr {
     flex-shrink: 0;
 }
 
-/*---------------------------------------Portfolio Page---------------------------------------*/
+/* ---------- Contact Page Overrides ---------- */
+
+.content.contact-content {
+    border: 5px solid var(--dark-purple);
+    padding: 10%;
+    overflow-y: scroll;
+}
+
+.contact-page {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+}
+
+.post-card {
+    width: 100%;
+    padding: 10%;
+    margin-top: 0%;
+}
+
+#contact-page-h1 {
+    font-size: clamp(2.25rem, 8vw, 3.5rem);
+    color: var(--dark-pink);
+    text-shadow: 2px 2px 2px var(--dark-purple);
+    position: static;
+}
+
+.address-lines {
+    color: transparent;
+    position: absolute;
+    top: 50%;
+}
+
+#stamp {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    height: 15%;
+    width: 15%;
+}
+
+
+/* ==========================================================
+   5. PORTFOLIO PAGE
+   ========================================================== */
 
 .portfolio-content {
     overflow-y: auto;
@@ -763,6 +821,8 @@ hr {
     place-items: center;
     padding: 1rem 2rem 2rem;
 }
+
+/* ---------- Project Cards ---------- */
 
 .grid-card {
     border: 5px dashed var(--light-purple);
@@ -832,6 +892,10 @@ hr {
     margin-bottom: 1rem;
 }
 
+.grid-card:not(.featured-card) .portfolio-image {
+    max-width: 220px;
+}
+
 .tech-stack {
     color: var(--text-pink);
     font-size: .95rem;
@@ -843,10 +907,6 @@ hr {
     display: flex;
     gap: .5rem;
     justify-content: center;
-}
-
-.grid-card:not(.featured-card) .portfolio-image {
-    max-width: 220px;
 }
 
 .grid-card a {
@@ -874,76 +934,83 @@ hr {
     box-shadow: 3px 4px 0 var(--light-purple);
 }
 
-/*-----------------------------Responsive Styles ----------------------------------------------------------------------------*/
-/* RESPONSIVE BREAKPOINTS
-   max-width: 479px  → Small phones
-   min-width: 480px  → Large phones
-   min-width: 768px  → Tablets
-   min-width: 1024px → Laptops / desktop
-   min-width: 1440px → Large monitors
-*/
-/*-------------------------------------------max-width: 479px  → Small phones-------------------------------------*/
-@media (max-width: 479.98px){
-    .content{
-        overflow-y: scroll;
-    }
-.column-sections {
-    overflow-y: visible;
-    overflow-x: hidden;
-}
-body{
-    overflow-y: hidden;
-     overflow-x: hidden;
+
+/* ==========================================================
+   6. RESPONSIVE
+   Small phones:  max-width 479px
+   Large phones:  480px - 767px
+   Tablets:       768px - 1023px
+   Short landscape screens
+   Rotated side tabs (tablets, phones, short landscape)
+   ========================================================== */
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 479.98px) {
+
+    /* Page & Container */
+
+    html {
+        scrollbar-color: var(--light-purple) var(--off-white);
+        scrollbar-width: auto;
     }
 
-html {
-    scrollbar-color: var(--light-purple) var(--off-white);
-    scrollbar-width: auto;
-}
+    body {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
 
     .content {
+        overflow-y: scroll;
         width: 83vw;
         height: 95vh;
         border: 5px solid var(--dark-pink);
     }
 
     .column-sections {
+        overflow-y: visible;
+        overflow-x: hidden;
         flex-direction: column;
         gap: 1rem;
         position: relative;
         align-items: center;
     }
 
- .column-sections > header {
+    /* Heading */
+
+    .column-sections > header {
         position: static;
         transform: none;
         order: 1;
     }
 
     #about-heading {
-/*min preferred max*/
-        font-size: clamp(1.6rem, 8vw,2.25rem);
+        font-size: clamp(1.6rem, 8vw, 2.25rem);
         white-space: nowrap;
         margin: 1rem 0 0;
-
-    }
-#about-heading::before {
-    font-size: clamp(1rem, 5vw, 1.5rem);
-}
-#about-heading::after {
-    font-size: clamp(0.75rem, 3.5vw, 1rem);
-    right: -5%;
-    bottom: 5%;
-}
-/* Cartoon + speech bubble */
-
-    #cartoon{
-    max-height: clamp(125px, 20vh, 200px);
     }
 
-    .speech h3{
+    #about-heading::before {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    #about-heading::after {
+        font-size: clamp(0.75rem, 3.5vw, 1rem);
+        right: -5%;
+        bottom: 5%;
+    }
+
+    /* Cartoon & Speech Bubble */
+
+    #cartoon {
+        max-height: clamp(125px, 20vh, 200px);
+        margin-bottom: 2rem;
+    }
+
+    .speech h3 {
         font-size: clamp(1.25rem, 6vw, 1.75rem);
     }
+
     .speech p {
         font-size: clamp(0.85rem, 3.5vw, 1rem);
     }
@@ -953,12 +1020,18 @@ html {
         width: 90%;
         height: fit-content;
         margin-bottom: 1rem;
-
     }
 
     .greeting {
         width: 90%;
         height: fit-content;
+    }
+
+    .social-list {
+        margin: 0 auto 1rem;
+        padding: 0;
+        text-align: center;
+        list-style: none;
     }
 
     /* Technical Skills */
@@ -968,17 +1041,26 @@ html {
         width: 95%;
         height: fit-content;
         padding-top: 0;
-
     }
-    .heading-and-technical-skills-column h2, .education-column h2 {
-    font-size: clamp(1.1rem, 5vw, 1.5rem);
-    padding: clamp(0.5rem, 2vh, 1rem) 0.5rem;
-}
+
+    .heading-and-technical-skills-column h2,
+    .education-column h2 {
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+        padding: clamp(0.5rem, 2vh, 1rem) 0.5rem;
+    }
 
     .technical-skills {
         width: 95%;
         height: fit-content;
-        padding: clamp(3rem ,6vh, 6rem) 0;
+        padding: clamp(3rem, 6vh, 6rem) 0;
+    }
+
+    .web-dev {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        place-items: center;
+        margin-top: 1rem;
     }
 
     /* Education */
@@ -988,74 +1070,59 @@ html {
         width: 90%;
         height: fit-content;
     }
-    .education-column .list li{
-        margin-bottom: 1rem;
 
+    .education-column .list li {
+        margin-bottom: 1rem;
     }
-    .education-column h3{
+
+    .education-column h3 {
         margin-bottom: 1rem;
         text-wrap: wrap;
     }
 
-
-    .web-dev{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    place-items: center;
-    }
+    /* Shared Lists & Headings */
 
     .list li {
-    font-size: clamp(0.85rem, 3.5vw, 1rem);
-
-}
-    .heading-and-technical-skills-column h3, .education-column h3{
-       padding: clamp(0.5rem 1.5vw 1rem);
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
     }
 
+    .heading-and-technical-skills-column h3,
+    .education-column h3 {
+        padding: clamp(0.5rem, 1.5vw, 1rem);
+    }
+
+    /* Contact Socials */
+
+    .contact-socials {
+        margin: 1rem auto 2.5rem;
+    }
 
     /* Tabs */
 
-.tabs {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    top: 58%;
-    right: -3.79%;
-    transform: rotate(90deg);
-    transform-origin: top right;
-    margin-top: 0;
+    .tab {
+        border: 5px solid;
+        font-size: 3.5vw;
+        padding: 2.3vw 4vw;
+        margin: 0;
+        height: 11.64vw;
+        width: 18.3vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 }
 
-.tab {
-    border: 5px solid;
-    font-size: 3.5vw;
-    padding: 2.3vw 4vw;
-    margin: 0;
-    height: 11.64vw;
-    width: 18.3vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-.social-list {
-    margin: 0 auto 1rem;
-    padding: 0;
-    text-align: center;
-    list-style: none;
-}
-.contact-socials{
-margin: 1rem auto 2.5rem;
-}
-}
+/* ---------- Large Phones ---------- */
 
+@media (min-width: 480px) and (max-width: 767.98px) {
 
+    /* Page & Container */
 
-/*--------------------------------------------------min-width: 480px → Large phones----------------------------------------*/
-
-@media (min-width: 480px) and (max-width: 767.98px){
+    html {
+        scrollbar-color: var(--light-purple) var(--off-white);
+        scrollbar-width: auto;
+    }
 
     .content,
     .column-sections {
@@ -1067,16 +1134,15 @@ margin: 1rem auto 2.5rem;
         height: clamp(75vh, 90vh, 95vh);
         border: 10px solid;
     }
-    html {
-        scrollbar-color: var(--light-purple) var(--off-white);
-        scrollbar-width: auto;
-    }
+
     .column-sections {
         flex-direction: column;
         gap: 1rem;
         position: relative;
         align-items: center;
     }
+
+    /* Heading */
 
     .column-sections > header {
         position: static;
@@ -1093,13 +1159,15 @@ margin: 1rem auto 2.5rem;
     #about-heading::before {
         font-size: clamp(1.25rem, 4vw, 1.75rem);
     }
+
     #about-heading::after {
         font-size: clamp(1rem, 3vw, 1.25rem);
         right: -5%;
         bottom: 5%;
     }
 
-    /* Cartoon + speech bubble */
+    /* Cartoon & Speech Bubble */
+
     .speech-bubble-column {
         order: 2;
         width: 90%;
@@ -1112,21 +1180,23 @@ margin: 1rem auto 2.5rem;
         height: fit-content;
     }
 
-#cartoon {
-    width: auto;
-    height: auto;
-    max-width: 90%;
-    max-height: clamp(120px, 22vh, 180px);
-}
+    #cartoon {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: clamp(120px, 22vh, 180px);
+    }
 
     .speech h3 {
         font-size: clamp(1.5rem, 5vw, 2rem);
     }
+
     .speech p {
         font-size: clamp(0.95rem, 3vw, 1.1rem);
     }
 
     /* Technical Skills */
+
     .heading-and-technical-skills-column {
         order: 3;
         width: 90%;
@@ -1139,20 +1209,24 @@ margin: 1rem auto 2.5rem;
         height: fit-content;
         padding: clamp(2rem, 8vh, 6rem) 0;
     }
-    .web-dev{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1rem;
-    place-items: center;
+
+    .web-dev {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1rem;
+        place-items: center;
     }
 
     /* Education */
+
     .education-column {
         order: 4;
         width: 90%;
         height: fit-content;
     }
+
+    /* Shared Lists & Headings */
 
     .heading-and-technical-skills-column h2,
     .education-column h2 {
@@ -1169,36 +1243,32 @@ margin: 1rem auto 2.5rem;
         color: transparent;
     }
 
-.tabs {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    top: 61%;
-    right: -4%;
-    transform: rotate(90deg);
-    transform-origin: top right;
-    margin-top: 0;
+    /* Tabs */
+
+    .tab {
+        border: 5px solid;
+        font-size: 3.5vw;
+        padding: clamp(8px, 2.3vw, 10px) 4vw;
+        margin: 0;
+        height: 11.64vw;
+        width: 18vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 }
 
-.tab {
-    border: 5px solid;
-    font-size: 3.5vw;
-    padding: clamp(8px, 2.3vw, 10px) 4vw;
-    margin: 0;
-    height: 11.64vw;
-    width: 18vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-}
-
-
-/*--------------------------------------------------min-width 768px → Tablets----------------------------------------*/
+/* ---------- Tablets ---------- */
 
 @media (min-width: 768px) and (max-width: 1023.98px) {
+
+    /* Page & Container */
+
+    html {
+        scrollbar-color: var(--light-purple) var(--off-white);
+        scrollbar-width: auto;
+    }
 
     .content,
     .column-sections {
@@ -1211,17 +1281,14 @@ margin: 1rem auto 2.5rem;
         border: 10px solid;
     }
 
-    html {
-        scrollbar-color: var(--light-purple) var(--off-white);
-        scrollbar-width: auto;
-    }
-
     .column-sections {
         flex-direction: column;
         gap: 1rem;
         position: relative;
         align-items: center;
     }
+
+    /* Heading */
 
     .column-sections > header {
         position: static;
@@ -1245,7 +1312,7 @@ margin: 1rem auto 2.5rem;
         bottom: 5%;
     }
 
-    /* Cartoon + speech bubble */
+    /* Cartoon & Speech Bubble */
 
     .speech-bubble-column {
         order: 2;
@@ -1297,13 +1364,16 @@ margin: 1rem auto 2.5rem;
         height: fit-content;
     }
 
-.education-column h3{
-    margin: 0.5rem;
-}
+    .education-column h3 {
+        margin: 0.5rem;
+    }
 
-.education-column .list li{
-    margin-bottom: 1.25rem;
-}
+    .education-column .list li {
+        margin-bottom: 1.25rem;
+    }
+
+    /* Shared Lists & Headings */
+
     .heading-and-technical-skills-column h2,
     .education-column h2 {
         font-size: clamp(1.5rem, 3.5vw, 2rem);
@@ -1321,22 +1391,10 @@ margin: 1rem auto 2.5rem;
 
     /* Tabs */
 
-    .tabs {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        position: absolute;
-        top: 51%;
-        right: -1%;
-        transform: rotate(90deg);
-        transform-origin: top right;
-        margin-top: 0;
-    }
-
     .tab {
         border: 5px solid;
         font-size: clamp(1rem, 2.5vw, 1.25rem);
-        padding:  1.5vw;
+        padding: 1.5vw;
         margin: 0;
         height: 8vw;
         width: 15vh;
@@ -1344,83 +1402,57 @@ margin: 1rem auto 2.5rem;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        color: green;
     }
 }
-/*fix tabs
-@media (orientation: landscape) and (max-width: 1023.98px) {
 
-    .tabs {
-        top: 50%;
-        right: -2%;
-    }
-
-    .tab {
-        font-size: clamp(0.9rem, 3vh, 1.5rem);
-        padding: clamp(0.5rem, 1.5vh, 1rem) clamp(1rem, 3vh, 1.75rem);
-        height: clamp(2rem, 9vh, 3.5rem);
-        width: clamp(6rem, 22vw, 10rem);
-    }
-}
-*/
-
+/* ---------- Short Landscape Screens ---------- */
 
 @media (orientation: landscape) and (max-height: 500px) {
-    .tabs{
 
-    top: 0%;
-    left: -1%;
-    }
     .tab {
         flex-direction: column;
         gap: 0;
         padding: 0;
-        width: 15vw;
+        width: 10vw;
         height: 15.06vh;
         text-wrap: nowrap;
-
     }
 
     .tab-label {
         font-size: 0.70rem;
         line-height: 0.9;
     }
-}
-/*----------------contact page--------------------*/
-.content.contact-content {
-    border: 5px solid var(--dark-purple);
-    padding: 10%;
-    overflow-y: scroll;
-}
-.contact-page {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    border: none;
+
+    .web-dev {
+        margin-top: 2rem;
+    }
+
+    .speech {
+        padding-bottom: 2rem;
+    }
 }
 
-.post-card {
-    width: 100%;
-    padding: 10%;
-    margin-top: 0%;
-}
-#contact-page-h1 {
-    font-size: clamp(2.25rem, 8vw, 3.5rem);
-    color: var(--dark-pink);
-    text-shadow: 2px 2px 2px var(--dark-purple);
-    position: static;
-}
+/* ---------- Rotated Side Tabs ---------- */
 
-.address-lines {
-    color: transparent;
-    position: absolute;
-    top: 50%;
-}
+@media (max-width: 1023.98px), (orientation: landscape) and (max-height: 500px) {
 
-#stamp {
-    font-size: clamp(1.1rem, 4vw, 1.5rem);
-    height: 15%;
-    width: 15%;
-}
+    .folder-container {
+        width: 83vw;
+        max-width: none;
+    }
 
-/*------------------------------------portfolio page----------------------*/
+    .content {
+        width: 100%;
+    }
+
+    .tabs {
+        position: absolute;
+        left: 100%;
+        bottom: 99%;
+        margin: 0;
+        width: max-content;
+        justify-content: flex-start;
+        transform-origin: bottom left;
+        transform: rotate(90deg);
+    }
+}

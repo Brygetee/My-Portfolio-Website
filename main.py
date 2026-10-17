@@ -25,9 +25,8 @@ if __name__ == '__main__':
 
 # emojis: https://emojicombos.com/heart
 
-# TODO 1: make certificate links open on blanks
+# TODO 1: ABOUT PAGE: 1. change background, add favicon, change the dark pink color, change order of links
 #Todo 2: correct contact page
-#Todo 3: add favicon to title
 #Todo 4: 414x 896  or 390x 844 not working
 #Todo 5: fix tabs on mobile on portrait and landscape
 
