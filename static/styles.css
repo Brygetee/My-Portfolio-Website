@@ -85,6 +85,10 @@ body {
     border-color: var(--dark-pink);
     color: var(--dark-pink);
 }
+.tab.about:hover{
+    background-color: var(--dark-pink);
+    color: var(--off-white);
+}
 
 .tab.portfolio {
     background: var(--off-white);
@@ -96,6 +100,10 @@ body {
     background: var(--off-white);
     border-color: var(--dark-purple);
     color: var(--dark-purple);
+}
+.tab.contact:hover{
+    background-color: var(--dark-purple);
+    color: var(--off-white);
 }
 
 .content {
@@ -126,7 +134,6 @@ body {
 }
 
 /* ---------- Shared Column Styles ---------- */
-
 .education-column,
 .heading-and-technical-skills-column,
 .speech-bubble-column {
@@ -175,9 +182,17 @@ body {
 }
 
 .education-column h3 {
-    color: var(--dark-purple);
+    font-size: 1rem;
+    color: var(--text-pink);
+    text-shadow: none;
     border: none;
     background-color: transparent;
+    padding: 0;
+    margin: 1.25rem 0 0.25rem;
+}
+
+.education-column h3:first-of-type {
+    margin-top: 0.5rem;
 }
 
 .education-column ul li::marker,
@@ -192,17 +207,16 @@ body {
 }
 
 .education-column .list li {
-    margin: 0.25rem;
+    margin: 0.4rem 0.25rem;
     line-height: 1.2;
-    color: var(--dark-pink);
+    color: var(--dark-purple);
 }
 
 .list li {
-    margin-bottom: clamp(0rem,3vw ,0.25rem);
+    margin-bottom: clamp(0rem, 3vw, 0.25rem);
     color: var(--dark-purple);
     font-size: clamp(0.8rem, 1.1vw, 1.25rem);
 }
-
 /* ---------- Page Heading (H1) ---------- */
 
 .column-sections > header {
@@ -219,55 +233,17 @@ body {
     line-height: 1;
     text-align: center;
     margin: 0;
-    padding: 0.5rem 1rem 1rem;
+    padding: 0.25rem 1rem;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
-    text-shadow: 3px 3px 3px var(--light-purple);
-    -webkit-text-stroke: 1px var(--dark-purple);
+    -webkit-text-stroke: 0.5px var(--dark-pink);
+    border: 10px solid var(--text-pink);
+    border-radius: 10px;
+    background-color: var(--off-white);
+
 }
 
-#about-heading::before {
-    content: "⭑★⭑";
-    position: absolute;
-    color: var(--light-purple);
-    font-size: clamp(1rem, 2vw, 2rem);
-    left: 0;
-    top: 1rem;
-    transform: rotate(-25deg);
-    text-shadow: none;
-    animation-name: sparkle;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    -webkit-text-stroke: 2px var(--dark-purple);
-}
-
-#about-heading::after {
-    content: "★ˎˊ˗";
-    position: absolute;
-    color: var(--light-purple);
-    font-size: 1.5rem;
-    right: -2rem;
-    bottom: 0;
-    transform: rotate(-25deg);
-    text-shadow: none;
-    animation-name: sparkle;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    -webkit-text-stroke: 2px var(--dark-purple);
-}
-
-@keyframes sparkle {
-    0% {
-        transform: scale(1) rotate(-25deg);
-    }
-    50% {
-        transform: rotate(-25deg) scale(1.25);
-    }
-    100% {
-        transform: rotate(-25deg) scale(1);
-    }
-}
 
 /* ---------- Education Column ---------- */
 
@@ -296,10 +272,6 @@ body {
 .education-column h2 {
     border: 10px solid pink;
     margin: clamp(0.5rem, 1vw, 1rem) auto;
-}
-
-.education-column h3 {
-    margin: 0.25rem;
 }
 
 .certification-link {
@@ -358,6 +330,48 @@ body {
 
 .technical-skills:hover {
     transform: translateY(-5px);
+}
+
+.technical-skills::before {
+    content: "⭑★⭑";
+    position: absolute;
+    color: var(--light-purple);
+    font-size: clamp(1rem, 2vw, 2rem);
+    left: 0;
+    top: 0;
+    transform: rotate(-25deg);
+    text-shadow: none;
+    animation-name: sparkle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    -webkit-text-stroke: 2px var(--dark-purple);
+}
+
+.technical-skills::after {
+    content: "★ˎˊ˗";
+    position: absolute;
+    color: var(--light-purple);
+    font-size: 1.5rem;
+    right: 0;
+    bottom: 2%;
+    transform: rotate(-25deg);
+    text-shadow: none;
+    animation-name: sparkle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    -webkit-text-stroke: 2px var(--dark-purple);
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(1) rotate(-25deg);
+    }
+    50% {
+        transform: rotate(-25deg) scale(1.25);
+    }
+    100% {
+        transform: rotate(-25deg) scale(1);
+    }
 }
 
 .technical-skills h2 {
@@ -538,7 +552,9 @@ body {
     font-size: 6rem;
     position: absolute;
     left: 25%;
-    top: 10%;
+    top: -5%;
+    -webkit-text-stroke: 1px var(--dark-purple);
+    color: var(--light-purple);
 }
 
 /* ---------- Speech Bubble & Cartoon ---------- */
@@ -745,7 +761,7 @@ hr {
     flex-shrink: 0;
 }
 
-/* ---------- Contact Page Overrides ---------- */
+/* ---------- Contact Page Overrides ----------
 
 .content.contact-content {
     border: 5px solid var(--dark-purple);
@@ -784,7 +800,7 @@ hr {
     height: 15%;
     width: 15%;
 }
-
+*/
 
 /* ==========================================================
    5. PORTFOLIO PAGE
@@ -1454,5 +1470,92 @@ hr {
         justify-content: flex-start;
         transform-origin: bottom left;
         transform: rotate(90deg);
+    }
+}
+/* ---------- Large Desktop (1920px+) ---------- */
+
+@media (min-width: 1920px) and (min-height: 700px) {
+
+    :root {
+        font-size: 19.2px;
+    }
+
+    .tab {
+        border-width: 12px;
+    }
+
+    .content {
+        border-width: 14px;
+    }
+
+    .portfolio-content {
+        border-width: 18px;
+    }
+
+    .education-column,
+    .technical-skills {
+        border-width: 12px;
+    }
+
+    .education-column h2,
+    .technical-skills h2 {
+        border-width: 12px;
+    }
+
+    .heading-and-technical-skills-column h3 {
+        border-width: 6px;
+    }
+
+    #cartoon {
+        max-height: 180px;
+        border-width: 12px;
+    }
+
+    .speech {
+        border-width: 10px;
+    }
+}
+
+/* ---------- Large Monitors (2560px+) ---------- */
+
+@media (min-width: 2560px) and (min-height: 700px) {
+
+    :root {
+        font-size: 25.6px;
+    }
+
+    .tab {
+        border-width: 16px;
+    }
+
+    .content {
+        border-width: 19px;
+    }
+
+    .portfolio-content {
+        border-width: 24px;
+    }
+
+    .education-column,
+    .technical-skills {
+        border-width: 16px;
+    }
+
+    .education-column h2,
+    .technical-skills h2 {
+        border-width: 16px;
+    }
+
+    .heading-and-technical-skills-column h3 {
+        border-width: 8px;
+    }
+
+    #cartoon {
+        max-height: 240px;
+        border-width: 16px;
+    }
+
+    .speech {
+        border-width: 13px;
     }
 }
