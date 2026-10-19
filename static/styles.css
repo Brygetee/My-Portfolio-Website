@@ -229,12 +229,11 @@ body {
 
 #about-heading {
     color: var(--text-pink);
-    font-size: clamp(2rem, 4vw, 6rem);
+    font-size: clamp(2rem, 3.5vw, 6rem);
     line-height: 1;
     text-align: center;
     margin: 0;
     padding: 0.25rem 1rem;
-    position: relative;
     z-index: 2;
     text-transform: uppercase;
     -webkit-text-stroke: 0.5px var(--dark-pink);
@@ -243,7 +242,10 @@ body {
     background-color: var(--off-white);
 
 }
-
+#about-heading:hover{
+    box-shadow: 6px 10px 15px var(--pink-shadow);
+    transform: translateY(-5px);
+}
 
 /* ---------- Education Column ---------- */
 
@@ -549,14 +551,20 @@ body {
 }
 
 #contact-page-h1 {
-    font-size: 6rem;
+    font-size: clamp(2rem, 3.5vw, 6rem);
     position: absolute;
     left: 25%;
-    top: -5%;
-    -webkit-text-stroke: 1px var(--dark-purple);
-    color: var(--light-purple);
-}
+    padding: 1rem;
+    color: var(--text-pink);
+    border: 10px solid var(--light-purple);
+    border-radius: 10px;
+    background-color: var(--off-white);
 
+}
+#contact-page-h1:hover{
+    transform: translateY(-5px);
+    box-shadow: 3px 4px 10px var(--dark-purple);
+}
 /* ---------- Speech Bubble & Cartoon ---------- */
 
 .contact-speech-bubble {
@@ -717,6 +725,7 @@ hr {
     align-items: center;
     gap: .5rem;
     padding: 0;
+
 }
 
 .contact-socials h3 {
