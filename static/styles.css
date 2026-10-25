@@ -727,21 +727,7 @@ hr {
     background-color: var(--dark-purple);
     color: var(--light-pink);
 }
-/* Success Message */
-.success-message {
-    background-color: #D4EDDA;
-    color: #155724;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 1.2rem;
-}
 
-.success-message h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
 /* ---------- Contact Socials ---------- */
 
 .contact-socials {
@@ -990,18 +976,147 @@ hr {
 
 /* ==========================================================
    6. RESPONSIVE
+   Contact shared (under 1024px + short landscape)
    Small phones:  max-width 479px
    Large phones:  480px - 767px
    Tablets:       768px - 1023px
    Short landscape screens
    Rotated side tabs (tablets, phones, short landscape)
+   Large desktop / monitors
    ========================================================== */
+
+/* ---------- Contact Page: Shared (under 1024px + short landscape) ----------
+   Must stay ABOVE the phone/tablet blocks so they can override it. */
+
+@media (max-width: 1023.98px),
+       (orientation: landscape) and (max-height: 500px),
+       (min-width: 1024px) and (max-width: 1279.98px) and (orientation: portrait) {
+
+    .content.contact-content {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .contact-page {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 100%;
+        padding-bottom: 2.5rem;
+    }
+
+    /* Heading */
+
+    #contact-page-h1 {
+        position: static;
+        width: fit-content;
+        max-width: 90%;
+        margin: 1.5rem auto 0;
+        padding: 0.4rem 1.25rem;
+        border-width: 6px;
+        font-size: clamp(1.75rem, 7vw, 3rem);
+        text-align: center;
+    }
+
+    /* Post card: message stacks on top of the form */
+
+    .post-card {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        margin: 2rem auto 1.5rem;
+        padding: 1.5rem 0;
+        transform: none; /* no tilt on the slim stacked card */
+    }
+
+    #stamp {
+        display: none;
+    }
+
+    #post-card-contents,
+    .contact-form-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #post-card-contents {
+        border-right: none;
+        border-bottom: 2px dashed var(--light-purple);
+        padding-bottom: 1rem;
+    }
+
+    #message {
+        width: 85%;
+        height: 7rem;
+        font-size: 1rem;
+    }
+
+    #contactForm {
+        width: 85%;
+        height: auto;
+        margin-top: 0;
+        padding-top: 0.5rem;
+    }
+
+    #contactForm label {
+        display: block;
+    }
+
+    #contactForm input {
+        display: block;
+        width: 100%;
+        margin-top: 0.25rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    #send {
+        width: auto;
+        padding: 0.5rem 2rem;
+        margin: 0.5rem auto;
+        font-size: 1.1rem;
+    }
+
+    .address-lines {
+        display: none;
+    }
+
+    /* Speech bubble & cartoon */
+
+    .contact-speech-bubble {
+        width: 90%;
+        max-width: 600px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .contact-speech-bubble .speech {
+        width: 80%;
+        height: auto;
+        margin: 4rem auto 0;
+        padding: 1.5rem 1rem;
+    }
+
+    #contact-cartoon {
+        width: auto;
+        max-width: 150px;
+        align-self: flex-end;
+        margin: 1.5rem 6rem 1rem 0;
+        border-width: 10px;
+    }
+}
 
 /* ---------- Small Phones ---------- */
 
 @media (max-width: 479.98px) {
 
     /* Page & Container */
+
+    .folder-container {
+        margin-left: calc(2.68vw - 8px); /* leaves room on the right for the rotated tabs */
+    }
 
     html {
         scrollbar-color: var(--light-purple) var(--off-white);
@@ -1016,7 +1131,8 @@ hr {
     .content {
         overflow-y: scroll;
         width: 83vw;
-        height: 95vh;
+        height: calc(100vh - 52px);
+        height: calc(100dvh - 52px); /* fits the screen exactly: no page scrollbar */
         border: 5px solid var(--dark-pink);
     }
 
@@ -1164,6 +1280,44 @@ hr {
         justify-content: center;
         box-sizing: border-box;
     }
+
+    /* Contact Page */
+
+    .content.contact-content {
+        border-width: 6px;
+    }
+
+    #contact-page-h1 {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+        border-width: 4px;
+        padding: 0.3rem 1rem;
+    }
+
+    .post-card {
+        width: 94%;
+        border-width: 5px;
+        outline-width: 3px;
+    }
+
+    #message,
+    #contactForm {
+        width: 90%;
+    }
+
+    .contact-socials h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-socials a {
+        padding: 0.35rem 0.8rem;
+        border-width: 4px;
+        font-size: 0.95rem;
+    }
+
+    #contact-cartoon {
+        max-width: 120px;
+        border-width: 8px;
+    }
 }
 
 /* ---------- Large Phones ---------- */
@@ -1171,6 +1325,10 @@ hr {
 @media (min-width: 480px) and (max-width: 767.98px) {
 
     /* Page & Container */
+
+    .folder-container {
+        margin-left: calc(2.68vw - 8px); /* leaves room on the right for the rotated tabs */
+    }
 
     html {
         scrollbar-color: var(--light-purple) var(--off-white);
@@ -1309,6 +1467,25 @@ hr {
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
+    }
+
+    /* Contact Page */
+
+    #contact-page-h1 {
+        font-size: clamp(2rem, 7vw, 2.5rem);
+    }
+
+    .post-card {
+        width: 88%;
+        padding: 2rem 0;
+    }
+
+    #message {
+        height: 9rem;
+    }
+
+    #contact-cartoon {
+        max-width: 140px;
     }
 }
 
@@ -1456,11 +1633,89 @@ hr {
         justify-content: center;
         box-sizing: border-box;
     }
+
+    /* Contact Page: side-by-side post card */
+
+    .post-card {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        width: 85%;
+        max-width: 750px;
+        height: auto;
+        margin: 2rem auto 1.5rem;
+        padding: 2rem 0;
+        transform: rotate(-2deg);
+    }
+
+    #post-card-contents,
+    .contact-form-container {
+        width: 50%;
+        height: auto;
+    }
+
+    #post-card-contents {
+        border-right: 2px dashed var(--light-purple);
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    #message {
+        width: 80%;
+        height: 12rem;
+    }
+
+    #contactForm {
+        width: 80%;
+        margin-top: 0;
+    }
+}
+
+/* ---------- Tablets & phones in landscape: postcard shape gets its stamp + greeting ---------- */
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1023.98px) {
+
+    #stamp {
+        display: flex;
+        top: 0.5rem;
+        right: 0.75rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.6rem;
+        border-width: 4px;
+    }
+
+    .contact-form-container {
+        padding-top: 2.5rem; /* keeps the form fields clear of the stamp */
+    }
+
+    .address-lines {
+        display: block;
+        top: 0.5rem;
+        left: 4%;
+        right: auto;
+        width: 44% !important;
+        font-size: 0.9rem;
+    }
+
+    .address-lines p {
+        margin: 0;
+        line-height: 1.4rem;
+    }
+
+    #post-card-contents {
+        padding-top: 2.5rem; /* makes room for the greeting above the message label */
+    }
 }
 
 /* ---------- Short Landscape Screens ---------- */
 
 @media (orientation: landscape) and (max-height: 500px) {
+
+    .content {
+        height: calc(100vh - 52px);
+        height: calc(100dvh - 52px); /* fits the screen exactly: no page scrollbar */
+    }
 
     .tab {
         flex-direction: column;
@@ -1509,6 +1764,140 @@ hr {
         transform: rotate(90deg);
     }
 }
+
+/* ---------- Desktop: fit the screen height (no page scrollbar on short windows) ---------- */
+
+@media (min-width: 1024px) and (min-height: 501px) {
+
+    .folder-container {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 50px);
+        height: calc(100dvh - 50px);
+    }
+
+    .tabs {
+        flex-shrink: 0;
+    }
+
+    .content {
+        flex: 0 1 auto;  /* keeps its normal 85vh, but shrinks if the window is too short */
+        min-height: 0;
+    }
+}
+
+/* ---------- Small Desktops / Landscape Tablets (1024px - 1279px, landscape) ---------- */
+
+@media (min-width: 1024px) and (max-width: 1279.98px) and (orientation: landscape) {
+
+    /* Contact Page */
+
+    #contact-page-h1 {
+        left: 4%;
+        top: 2%;
+        font-size: clamp(2.5rem, 5.2vw, 3.75rem);
+        padding: 0.4rem 1.5rem;
+        border-width: 8px;
+    }
+
+    .post-card {
+        width: 56%;
+        margin: 22% 0 18% 3%;
+    }
+
+    #stamp {
+        width: 3.25rem;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        font-size: 2rem;
+        border-width: 4px;
+    }
+
+    .address-lines {
+        left: 54%;
+        right: auto;
+        width: auto !important;
+        white-space: nowrap;
+        font-size: 0.85rem;
+    }
+
+    #send {
+        width: 45%;
+        padding: 0.4rem 0;
+        font-size: 1.05rem;
+    }
+
+    .address-lines p {
+        line-height: 1.5rem;
+        margin: 0.75rem 0 0;
+    }
+
+    .contact-speech-bubble {
+        width: 36%;
+        padding: 0 0.75rem;
+        margin-left: auto;
+    }
+
+    .contact-speech-bubble .speech {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem 0.75rem;
+    }
+
+    .contact-socials h3 {
+        font-size: 1.3rem;
+    }
+
+    #contact-cartoon {
+        max-width: 160px;
+        border-width: 12px;
+        margin-bottom: 0;
+    }
+}
+
+/* ---------- Tall 1024px screens, e.g. iPad Pro 12.9" / 13" in portrait ------postcard on top, speech bubble + cartoon below. */
+
+@media (min-width: 1024px) and (max-width: 1279.98px) and (orientation: portrait) {
+
+    #contact-page-h1 {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+    }
+
+    .post-card {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        width: 85%;
+        max-width: 750px;
+        height: auto;
+        margin: 2rem auto 1.5rem;
+        padding: 2rem 0;
+        transform: rotate(-2deg);
+    }
+
+    #post-card-contents,
+    .contact-form-container {
+        width: 50%;
+        height: auto;
+    }
+
+    #post-card-contents {
+        border-right: 2px dashed var(--light-purple);
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    #message {
+        width: 80%;
+        height: 12rem;
+    }
+
+    #contactForm {
+        width: 80%;
+        margin-top: 0;
+    }
+}
+
 /* ---------- Large Desktop (1920px+) ---------- */
 
 @media (min-width: 1920px) and (min-height: 700px) {
@@ -1550,6 +1939,30 @@ hr {
 
     .speech {
         border-width: 10px;
+    }
+
+    /* Contact Page */
+
+    .content.contact-content {
+        border-width: 14px;
+    }
+
+    #contact-page-h1 {
+        border-width: 12px;
+    }
+
+    .post-card {
+        border-width: 10px;
+        outline-width: 6px;
+    }
+
+    #stamp {
+        border-width: 6px;
+    }
+
+    #contact-cartoon {
+        border-width: 18px;
+        max-width: 240px;
     }
 }
 
@@ -1594,5 +2007,29 @@ hr {
 
     .speech {
         border-width: 13px;
+    }
+
+    /* Contact Page */
+
+    .content.contact-content {
+        border-width: 19px;
+    }
+
+    #contact-page-h1 {
+        border-width: 16px;
+    }
+
+    .post-card {
+        border-width: 13px;
+        outline-width: 8px;
+    }
+
+    #stamp {
+        border-width: 8px;
+    }
+
+    #contact-cartoon {
+        border-width: 24px;
+        max-width: 300px;
     }
 }
