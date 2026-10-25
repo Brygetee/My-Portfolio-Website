@@ -1,5 +1,13 @@
+import os
+import smtplib
+from email.message import EmailMessage
+from dotenv import load_dotenv
+from flask import Flask, render_template, request
 
-from flask import Flask, render_template
+load_dotenv()
+
+my_email = os.getenv("MY_EMAIL")
+my_password = os.getenv("MY_PASSWORD")
 
 app = Flask(__name__)
 
@@ -11,9 +19,30 @@ def home():
 def about():
     return render_template("index.html")
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET","POST"])
 def contact():
-    return render_template("contact.html")
+    if request.method == "POST":
+        data = request.form
+
+        msg = EmailMessage()
+        msg["Subject"] = f"Contact form submission from: {data['name']}"
+        msg["From"] = my_email
+        msg["To"] = my_email
+        msg["Reply-To"] = data["email"]
+        msg.set_content(
+            f"{data['message']}\n\n{data['name']}\n{data['email']}\n{data.get('phone', '')}"
+        )
+
+        try:
+            with smtplib.SMTP("smtp.gmail.com",587) as connection:
+                connection.starttls()
+                connection.login(user=my_email, password=my_password)
+                connection.send_message(msg)
+            return render_template("contact.html", msg_sent=True)
+        except Exception as e:
+            app.logger.error(f"Email failed {e}")
+            return render_template("contact.html", msg_sent=False, error=True)
+    return render_template("contact.html", msg_sent=False)
 
 @app.route("/portfolio")
 def portfolio():

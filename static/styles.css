@@ -551,10 +551,11 @@ body {
 }
 
 #contact-page-h1 {
-    font-size: clamp(2rem, 3.5vw, 6rem);
+    font-size: clamp(2rem, 5.5vw, 6rem);
     position: absolute;
     left: 25%;
-    padding: 1rem;
+    top: -3%;
+    padding: 0.5rem 2rem;
     color: var(--text-pink);
     border: 10px solid var(--light-purple);
     border-radius: 10px;
@@ -572,10 +573,15 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 0 1rem;
+
 }
 
 .contact-speech-bubble .speech {
     border: 4px solid var(--dark-purple);
+    height: 50%;
+    margin: 1rem auto;
+    padding: 2rem 1rem;
+
 }
 
 .contact-speech-bubble .speech::before {
@@ -608,7 +614,7 @@ body {
     background-color: #fffdf8;
     height: 50%;
     width: 60%;
-    margin: 15% auto;
+    margin: 18% auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -623,6 +629,9 @@ body {
 #message:focus {
     outline: none;
     box-shadow: 0 0 8px var(--light-purple);
+}
+#message_label{
+    margin-bottom: 1rem;
 }
 
 #stamp {
@@ -714,7 +723,25 @@ hr {
     border-radius: 3px;
     cursor: pointer;
 }
+#send:hover{
+    background-color: var(--dark-purple);
+    color: var(--light-pink);
+}
+/* Success Message */
+.success-message {
+    background-color: #D4EDDA;
+    color: #155724;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
 
+.success-message h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
 /* ---------- Contact Socials ---------- */
 
 .contact-socials {
@@ -724,14 +751,15 @@ hr {
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    padding: 0;
+    margin: 0;
+
 
 }
 
 .contact-socials h3 {
     font-size: 1.6rem;
     color: var(--dark-pink);
-    margin: 1rem auto 1.5rem;
+    margin: 0 auto 1rem;
     text-align: center;
     position: relative;
     font-weight: normal;
@@ -746,7 +774,7 @@ hr {
     align-items: center;
     gap: .7rem;
     width: fit-content;
-    margin: .4rem auto;
+    margin: 0 auto;
     padding: .45rem 1rem;
     color: var(--text-pink);
     background: var(--off-white);
