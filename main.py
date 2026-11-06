@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("portfolio.html")
 
 @app.route("/about")
 def about():
@@ -54,8 +54,9 @@ if __name__ == '__main__':
 
 # emojis: https://emojicombos.com/heart
 
-# TODO 1: ABOUT PAGE: 1. change background, add favicon, change the dark pink color, change order of links
-#Todo 2: correct contact page
+
+#Todo 2: All pages: change tab color when on the page
 #Todo 4: textpink &dark pink are the same variable
+#Todo 5: update image for portfolio site under projects when completed
 
 

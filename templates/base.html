@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Brygetee Al-Shawkani{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,7 @@
 
 
             <a href="/portfolio"><button class="tab portfolio"><span id="crayon">🖍</span><span class="tab-label"> Portfolio</span></button></a>
-            <a href="/"><button class="tab about"><span id="star">☆</span><span class="tab-label"> About</span></button></a>
+            <a href="/about"><button class="tab about"><span id="star">☆</span><span class="tab-label"> About</span></button></a>
             <a href="/contact"><button class="tab contact"><span id="envelope">✉</span><span class="tab-label"> Contact</span></button></a>
         </div>
 

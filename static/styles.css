@@ -40,8 +40,11 @@ html {
 }
 
 body {
-    background-color: lavender;
-    background-repeat: repeat;
+    background-color: white;
+    background-image:
+        linear-gradient(90deg, rgba(207, 186, 240, .20) 50%, transparent 50%),
+        linear-gradient(rgba(207, 186, 240, .20) 50%, transparent 50%);
+    background-size: 44px 44px;
     color: var(--dark-pink);
 }
 
@@ -79,32 +82,38 @@ body {
     color: var(--dark-pink);
     background: var(--off-white);
 }
-
 .tab.about {
-    background: var(--off-white);
-    border-color: var(--dark-pink);
-    color: var(--dark-pink);
-}
-.tab.about:hover{
-    background-color: var(--dark-pink);
+    background:  rgba(207, 186, 240, .85);
+    border-color:  rgba(207, 186, 240, .85);
     color: var(--off-white);
 }
 
-.tab.portfolio {
+.tab.about:hover {
     background: var(--off-white);
-    border-color: var(--text-pink);
-    color: var(--text-pink);
+    color:  rgba(207, 186, 240, .85);
 }
 
 .tab.contact {
-    background: var(--off-white);
+    background: var(--dark-purple);
     border-color: var(--dark-purple);
-    color: var(--dark-purple);
-}
-.tab.contact:hover{
-    background-color: var(--dark-purple);
     color: var(--off-white);
 }
+
+.tab.contact:hover {
+    background: var(--off-white);
+    color: var(--dark-purple);
+}
+.tab.portfolio {
+    background: var(--text-pink);
+    border-color: var(--text-pink);
+    color: var(--off-white);
+}
+.tab.portfolio:hover {
+    background: var(--off-white);
+    color: var(--text-pink);
+}
+
+
 
 .content {
     border: 12px solid var(--dark-pink);
@@ -121,7 +130,9 @@ body {
    ========================================================== */
 
 /* ---------- Layout ---------- */
-
+.content.about-content {
+    border-color: rgba(207, 186, 240, .85);
+}
 .column-sections {
     height: 100%;
     width: 100%;
@@ -690,6 +701,7 @@ body {
 #email,
 #phone {
     background-color: var(--light-pink);
+    color: var(--dark-purple);
     border: none;
 }
 
@@ -825,61 +837,506 @@ hr {
 }
 */
 
+
 /* ==========================================================
-   5. PORTFOLIO PAGE
+   5. PORTFOLIO PAGE (landing page layout)
    ========================================================== */
 
 .portfolio-content {
     overflow-y: auto;
-    border: 15px solid var(--text-pink);
+    border: 12px solid var(--text-pink);
+    scroll-behavior: smooth;
 }
 
-.featured-grid {
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 3rem;
+/* inner border, same as the about and contact pages */
+.portfolio-page {
+    border: 4px solid var(--light-purple);
+    padding: 1rem 1.5rem 2.5rem;
+    min-height: 100%;
 }
 
-.section-label {
-    font-size: 3rem;
-    color: var(--dark-pink);
+/* ---------- Shared buttons---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .55rem 1.4rem;
+    border-radius: 999px;
+    border: 5px solid var(--light-purple);
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: .25s;
+    text-wrap: nowrap;
+}
+
+.btn-primary {
+    background: var(--dark-pink);
+    color: var(--off-white);
+    border-color: var(--dark-pink);
+    box-shadow: 3px 4px 0 var(--light-purple);
+}
+
+.btn-primary:hover {
+    background: var(--dark-purple);
+    border-color: var(--dark-purple);
+    transform: translateY(-2px) rotate(-2deg);
+}
+
+.btn-secondary {
     background: var(--off-white);
-    border: 6px dashed #ffb3c6;
-    border-radius: 20px;
-    width: fit-content;
-    margin: 3rem auto;
-    padding: .3rem 1.25rem;
-    transform: rotate(-2deg);
-    box-shadow: 2px 2px 10px var(--light-purple);
+    color: var(--text-pink);
 }
+
+.btn-secondary:hover {
+    background: var(--light-pink);
+    color: var(--dark-pink);
+    border-color: var(--dark-pink);
+    transform: translateY(-2px) rotate(-2deg);
+    box-shadow: 3px 4px 0 var(--light-purple);
+}
+
+.btn:focus-visible,
+.grid-card a:focus-visible {
+    outline: 3px solid var(--dark-purple);
+    outline-offset: 3px;
+}
+
+/* ---------- 1. Hero ---------- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 4rem 2rem 3rem;
+    border: 10px dashed var(--light-purple);
+    border-radius: 10px;
+    background-color: #fff0f5;
+    box-shadow: 6px 10px 15px var(--pink-shadow);
+    margin-top: 2%;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .9rem;
+}
+
+/* "open to opportunities" pill at the top */
+.availability {
+    margin: 0;
+    padding: .25rem 1rem;
+    background: var(--off-white);
+    color: var(--dark-purple);
+    border: 3px solid var(--light-purple);
+    border-radius: 999px;
+    font-size: clamp(.85rem, 1.2vw, 1.1rem);
+}
+
+.availability span {
+    display: inline-block;
+    color: var(--light-purple);
+    -webkit-text-stroke: 1px var(--dark-purple);
+    animation: sparkle 3s infinite;
+}
+
+#portfolio-heading {
+    color: var(--text-pink);
+    font-size: clamp(2.25rem, 4.5vw, 5rem);
+    line-height: 1;
+    padding: .25rem 1rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.5px var(--dark-pink);
+    border: 10px solid var(--text-pink);
+    border-radius: 10px;
+    background-color: var(--off-white);
+    margin: .75rem 0;
+    transform: rotate(-1.5deg);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#portfolio-heading:hover {
+    box-shadow: 6px 10px 15px var(--pink-shadow);
+    transform: translateY(-5px) rotate(0deg);
+}
+
+.hero-role {
+    margin: 0;
+    padding: .1rem 1.1rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    color: var(--dark-purple);
+    background: var(--off-white);
+    border: 3px solid var(--light-purple);
+    border-radius: 999px;
+}
+
+.hero-pitch {
+    margin: 0;
+    max-width: 30rem;
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    line-height: 1.4;
+    color: var(--text-pink);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: .5rem;
+}
+
+.hero-art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* little greeting bubble over the photo */
+.hero-bubble {
+    position: relative;
+    width: fit-content;
+    max-width: 90%;
+    padding: .5rem 1.5rem;
+    text-align: center;
+    background: white;
+    border: 8px solid var(--dark-pink);
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px #888;
+    margin-bottom: 2.25rem;
+    color: var(--text-pink);
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+}
+
+.hero-bubble p {
+    margin: 0;
+}
+
+.hero-bubble::before,
+.hero-bubble::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.hero-bubble::before {
+    right: 30px;
+    top: 100%;
+    border-width: 25px;
+    border-color: var(--dark-pink) transparent transparent var(--dark-pink);
+}
+
+.hero-bubble::after {
+    right: 38px;
+    top: 100%;
+    border-width: 15px;
+    border-color: #fff transparent transparent #fff;
+}
+
+/* photo + hello stickers + sparkles */
+.photo-wrap {
+    position: relative;
+    width: clamp(220px, 28vw, 340px);
+}
+
+/* border for both photos */
+.portfolio-cartoon {
+    border: 10px solid #ffb3c6;
+    border-radius: 10px;
+}
+
+/* Hero cartoon sizing */
+.hero-art .portfolio-cartoon {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Selfie sizing */
+#about-me-section .portfolio-cartoon {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    position: relative;
+    object-fit: cover;
+}
+
+.sticker {
+    position: absolute;
+    padding: .2rem .9rem;
+    background: var(--off-white);
+    color: var(--dark-purple);
+    border: 3px solid var(--light-purple);
+    border-radius: 999px;
+    font-size: clamp(.85rem, 1.1vw, 1.05rem);
+    box-shadow: 3px 4px 0 var(--light-purple);
+    white-space: nowrap;
+}
+
+.sticker.s1 { top: 8%;    left: -14%;  transform: rotate(-8deg); }
+.sticker.s2 { top: 48%;   right: -12%; transform: rotate(6deg); }
+.sticker.s3 { bottom: 6%; left: -10%;  transform: rotate(-4deg); }
+
+.sparkle-deco {
+    position: absolute;
+    color: var(--light-purple);
+    -webkit-text-stroke: 2px var(--dark-purple);
+    animation: sparkle 3s infinite;
+    pointer-events: none;
+}
+
+.sparkle-deco.d1 { top: -7%;    left: 6%;   font-size: 2.5rem; }
+.sparkle-deco.d2 { bottom: -6%; left: 46%;  font-size: 1.75rem; }
+
+/* scrapbook stuff on the photo: tape + doodles */
+.tape {
+    position: absolute;
+    top: -4%;
+    left: 42%;
+    width: 36%;
+    height: 1.7rem;
+    transform: translateX(-50%) rotate(-3deg);
+    background: rgba(207, 186, 240, .85);
+    box-shadow: 0 2px 3px rgba(156, 123, 216, .3);
+    clip-path: polygon(0 0, 100% 0, 97% 25%, 100% 50%, 97% 75%, 100% 100%, 0 100%, 3% 75%, 0 50%, 3% 25%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.doodle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.doodle.flower {
+    top: 38%;
+    left: -7%;
+    font-size: 2.1rem;
+    color: var(--light-purple);
+    -webkit-text-stroke: 2px var(--dark-purple);
+    transform: rotate(-10deg);
+}
+
+.doodle.flower.f2 {
+    top: -8%;
+    left: auto;
+    right: -5%;
+    transform: rotate(12deg);
+}
+
+.doodle.spark4 {
+    bottom: -7%;
+    right: -4%;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--off-white);
+    -webkit-text-stroke: 2px var(--dark-purple);
+    transform: rotate(8deg);
+}
+
+/* paper layer behind the photo */
+.photo-wrap {
+    isolation: isolate;
+}
+
+.photo-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 4% -6% -4% 6%;
+    background: #eadcfb;
+    border: 5px solid var(--light-purple);
+    border-radius: 10px;
+    box-shadow: 3px 4px 0 var(--light-purple);
+    transform: rotate(5deg);
+    z-index: -1;
+}
+
+/* github / linkedin / contact stamps under the buttons */
+.hero-stamps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    margin-top: 1rem;
+}
+
+.stamp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(3rem, 4.5vw, 3.75rem);
+    aspect-ratio: 1 / 1;
+    color: var(--dark-purple);
+    background: var(--off-white);
+    border: 4px dashed var(--dark-purple);
+    box-shadow: 3px 4px 0 var(--light-purple);
+    transition: .25s;
+}
+
+.stamp-link svg {
+    width: 52%;
+    height: 52%;
+}
+
+.stamp-link:hover {
+    background: var(--dark-purple);
+    color: var(--off-white);
+    border-color: var(--dark-pink);
+    transform: translateY(-3px);
+}
+
+.stamp-link:focus-visible {
+    outline: 3px solid var(--dark-purple);
+    outline-offset: 3px;
+}
+
+/* ---------- 2. Tech strip ---------- */
+
+.tech-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+    padding: 1rem 1rem 0;
+}
+
+.chip {
+    padding: .2rem 1rem;
+    background: var(--off-white);
+    color: var(--dark-purple);
+    border: 3px solid var(--light-purple);
+    border-radius: 999px;
+    font-size: clamp(.85rem, 1.1vw, 1.05rem);
+}
+
+/* ---------- Panels (match the Education / Technical Skills boxes) ---------- */
+
+.project-panel {
+    position: relative;
+    background: white;
+    border: 10px dashed var(--light-purple);
+    border-radius: 10px;
+    box-shadow: 6px 10px 15px var(--light-purple);
+    margin: 4.5rem 1rem 1.5rem;
+    padding: 2.5rem 0 1rem;
+    transition: transform .3s ease;
+}
+
+.project-panel.pink {
+    border-color: #ffb3c6;
+    box-shadow: 6px 10px 15px var(--pink-shadow);
+}
+
+.project-panel:hover {
+    transform: translateY(-5px);
+}
+
+.panel-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    color: var(--dark-purple);
+    background: var(--off-white);
+    border: 10px solid var(--light-purple);
+    border-radius: 20px;
+    padding: .15em .75em;
+    margin: 0;
+}
+
+.project-panel.pink .panel-label {
+    color: var(--dark-pink);
+    border-color: #ffb3c6;
+}
+
+.project-panel::before {
+    content: "⭑★⭑";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--light-purple);
+    font-size: clamp(1rem, 2vw, 2rem);
+    transform: rotate(-25deg);
+    -webkit-text-stroke: 2px var(--dark-purple);
+    animation: sparkle 3s infinite;
+    pointer-events: none;
+}
+
+/* ---------- 3. What I do ---------- */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 2rem 1.5rem;
+}
+
+.service-card {
+    text-align: center;
+    padding: 1rem;
+    background: var(--off-white);
+    border: 5px solid var(--light-purple);
+    border-radius: 10px;
+}
+
+.service-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+}
+
+.service-card h3 {
+    margin: .5rem 0;
+    font-size: 1.3rem;
+    color: var(--dark-pink);
+}
+
+.service-card p {
+    margin: 0;
+    line-height: 1.35;
+    color: var(--dark-purple);
+}
+
+/* ---------- 4 & 5. Project grids and cards ---------- */
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    gap: 40px 40px;
-    place-items: center;
+    gap: 40px;
+    place-items: start center;
     padding: 1rem 2rem 2rem;
 }
 
-/* ---------- Project Cards ---------- */
-
 .grid-card {
-    border: 5px dashed var(--light-purple);
+    border: 5px solid var(--light-purple);
     border-radius: 10px;
     background-color: var(--off-white);
     box-shadow: 0 8px 15px rgba(251, 111, 146, 0.18);
-    height: auto;
-    width: 90%;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
     padding: 1.25rem 1rem 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
+/* slight tilt on the cards */
+.grid-card:nth-child(odd)  { transform: rotate(-1deg); }
+.grid-card:nth-child(even) { transform: rotate(1deg); }
+
 .grid-card:hover {
-    transform: translateY(-6px) rotate(-1deg);
+    transform: translateY(-6px) rotate(0deg);
     box-shadow: 6px 10px 15px var(--pink-shadow);
 }
 
@@ -887,78 +1344,72 @@ hr {
     padding: 1.5rem;
 }
 
+.grid-card h3 {
+    font-size: 1.4rem;
+    color: var(--dark-pink);
+    background: var(--light-pink);
+    border-radius: 20px;
+    padding: .15em 1em;
+    margin: 0 0 .75rem;
+    text-align: center;
+    width: fit-content;
+}
+
+.demo-video,
+.portfolio-image {
+    height: auto;
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 6px solid var(--dark-purple);
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+/* video keeps its own shape so nothing gets cropped or letterboxed */
+.demo-video {
+    aspect-ratio: auto;
+    object-fit: contain;
+}
+
 .featured-card .demo-video,
 .featured-card .portfolio-image {
     max-width: 320px;
 }
 
-.grid-card h2 {
-    font-size: 1.6rem;
-    color: var(--dark-pink);
-    background: var(--light-pink);
-    border-radius: 20px;
-    padding: 0.15em 1.15em;
-    margin: 0 0 0.75rem;
-    text-align: center;
-    width: fit-content;
-    white-space: nowrap;
-}
-
-.demo-video {
-    height: auto;
-    width: 100%;
-    max-width: 220px;
-    object-fit: cover;
-    border: 6px dashed var(--dark-purple);
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
 .demo-video:hover {
-    transform: scale(1.25);
-    border: none;
-    border-radius: 0;
+    transform: scale(1.15);
+    border-color: var(--dark-pink); /* border is solid now so the hover swaps the color instead */
 }
-
-.portfolio-image {
-    height: auto;
-    width: 100%;
-    max-width: 220px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border: 6px dashed var(--dark-purple);
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.grid-card:not(.featured-card) .portfolio-image {
-    max-width: 220px;
-}
-
 .tech-stack {
+    margin: .25rem 0 .75rem;
+    padding: .1rem .9rem;
     color: var(--text-pink);
+    background: white;
+    border: 3px solid var(--light-purple);
+    border-radius: 999px;
     font-size: .95rem;
     text-align: center;
-    margin: .25rem 0 .75rem;
 }
 
 .project-links {
     display: flex;
+    flex-wrap: wrap;
     gap: .5rem;
     justify-content: center;
+    margin-top: auto;
 }
 
 .grid-card a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
     width: fit-content;
-    margin: .3rem auto;
     padding: .4rem 1.1rem;
     color: var(--dark-purple);
     background: var(--light-pink);
-    border: 2px dashed var(--light-purple);
+    border: 2px solid var(--light-purple);
     border-radius: 999px;
     font-size: 1rem;
     text-decoration: none;
@@ -972,6 +1423,103 @@ hr {
     border-color: var(--dark-pink);
     box-shadow: 3px 4px 0 var(--light-purple);
 }
+.project-highlights strong {
+    color: var(--dark-pink);
+    font-weight: normal; /* Jua only has one weight so I'm using color for emphasis */
+}
+
+/* ---------- 6. About teaser ---------- */
+#about-me-section {
+    position: relative;
+    min-height: 30rem;
+    padding: 3rem 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.about-teaser {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    color: var(--dark-purple);
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    line-height: 1.5;
+}
+
+.about-teaser p {
+    margin: 0 ;
+    border-radius: 10px;
+    width: 50%;
+    padding: 2rem;
+
+
+}
+
+#read-more-button {
+    position: absolute;
+    bottom: 5rem;
+    transform: translateX(90%);
+    width: 20%;
+    height: 15%;
+    font-size: clamp(1rem, 2.5vw, 3rem);
+}
+
+/* ---------- 7. Closing call to action (postcard) ---------- */
+
+.closing-cta {
+    margin: 3rem 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cta-card {
+    position: relative;
+    width: min(100%, 44rem);
+    padding: 2rem 2rem 2rem;
+    text-align: center;
+    background-color: #fffdf8;
+    border: 8px solid var(--off-white);
+    outline: 5px dashed var(--light-purple);
+    box-shadow: 0 20px 25px rgba(251, 111, 146, .25);
+    transform: rotate(-1.5deg);
+}
+
+.cta-card h2 {
+    margin: 0 0 .5rem;
+    padding-right: 3.5rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--dark-pink);
+}
+
+.cta-card p {
+    margin: 0 0 1rem;
+    color: var(--dark-purple);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+}
+
+.cta-card .hero-buttons {
+    justify-content: center;
+}
+
+.cta-stamp {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    background: var(--light-pink);
+    border: 4px dashed var(--dark-purple);
+}
 
 
 /* ==========================================================
@@ -983,10 +1531,11 @@ hr {
    Short landscape screens
    Rotated side tabs (tablets, phones, short landscape)
    Large desktop / monitors
+   Portfolio page (at the very end)
    ========================================================== */
 
 /* ---------- Contact Page: Shared (under 1024px + short landscape) ----------
-   Must stay ABOVE the phone/tablet blocks so they can override it. */
+   Needs to stay ABOVE the phone/tablet blocks so they can override it. */
 
 @media (max-width: 1023.98px),
        (orientation: landscape) and (max-height: 500px),
@@ -1028,7 +1577,7 @@ hr {
         height: auto;
         margin: 2rem auto 1.5rem;
         padding: 1.5rem 0;
-        transform: none; /* no tilt on the slim stacked card */
+        transform: none; /* no tilt when the card is stacked */
     }
 
     #stamp {
@@ -1115,7 +1664,7 @@ hr {
     /* Page & Container */
 
     .folder-container {
-        margin-left: calc(2.68vw - 8px); /* leaves room on the right for the rotated tabs */
+        margin-left: calc(2.68vw - 8px); /* gives the rotated tabs room on the right */
     }
 
     html {
@@ -1132,7 +1681,7 @@ hr {
         overflow-y: scroll;
         width: 83vw;
         height: calc(100vh - 52px);
-        height: calc(100dvh - 52px); /* fits the screen exactly: no page scrollbar */
+        height: calc(100dvh - 52px); /* fits the screen so there's no page scrollbar */
         border: 5px solid var(--dark-pink);
     }
 
@@ -1327,7 +1876,7 @@ hr {
     /* Page & Container */
 
     .folder-container {
-        margin-left: calc(2.68vw - 8px); /* leaves room on the right for the rotated tabs */
+        margin-left: calc(2.68vw - 8px); /* gives the rotated tabs room on the right */
     }
 
     html {
@@ -1671,7 +2220,7 @@ hr {
     }
 }
 
-/* ---------- Tablets & phones in landscape: postcard shape gets its stamp + greeting ---------- */
+/* ---------- Landscape tablets: bring back the stamp + address on the postcard ---------- */
 
 @media (orientation: landscape) and (min-width: 768px) and (max-width: 1023.98px) {
 
@@ -1686,7 +2235,7 @@ hr {
     }
 
     .contact-form-container {
-        padding-top: 2.5rem; /* keeps the form fields clear of the stamp */
+        padding-top: 2.5rem; /* keeps the inputs from running into the stamp */
     }
 
     .address-lines {
@@ -1704,7 +2253,7 @@ hr {
     }
 
     #post-card-contents {
-        padding-top: 2.5rem; /* makes room for the greeting above the message label */
+        padding-top: 2.5rem; /* space for the address above the message label */
     }
 }
 
@@ -1714,7 +2263,7 @@ hr {
 
     .content {
         height: calc(100vh - 52px);
-        height: calc(100dvh - 52px); /* fits the screen exactly: no page scrollbar */
+        height: calc(100dvh - 52px); /* fits the screen so there's no page scrollbar */
     }
 
     .tab {
@@ -1781,7 +2330,7 @@ hr {
     }
 
     .content {
-        flex: 0 1 auto;  /* keeps its normal 85vh, but shrinks if the window is too short */
+        flex: 0 1 auto;  /* stays at 85vh but shrinks if the window is too short */
         min-height: 0;
     }
 }
@@ -1853,9 +2402,26 @@ hr {
         border-width: 12px;
         margin-bottom: 0;
     }
+
+    /* Portfolio: about teaser */
+
+    #about-me-section {
+        padding: 3rem 1.5rem 0;
+    }
+
+    .about-teaser {
+        gap: 1.5rem;
+    }
+
+    .about-teaser p {
+        width: 52%;
+        padding: 1.5rem;
+        font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    }
 }
 
-/* ---------- Tall 1024px screens, e.g. iPad Pro 12.9" / 13" in portrait ------postcard on top, speech bubble + cartoon below. */
+/* ---------- Tall 1024px screens, like iPad Pro 12.9" in portrait ----------
+   postcard on top, speech bubble + cartoon below */
 
 @media (min-width: 1024px) and (max-width: 1279.98px) and (orientation: portrait) {
 
@@ -1895,6 +2461,17 @@ hr {
     #contactForm {
         width: 80%;
         margin-top: 0;
+    }
+
+    /* Portfolio: about teaser */
+
+    #about-me-section {
+        padding: 3rem 1.5rem 0;
+    }
+
+    .about-teaser p {
+        width: 52%;
+        padding: 1.5rem;
     }
 }
 
@@ -1964,6 +2541,26 @@ hr {
         border-width: 18px;
         max-width: 240px;
     }
+
+    /* Portfolio: hero */
+
+    .hero {
+        border-width: 12px;
+    }
+
+    .hero-art .photo-wrap {
+        width: 400px;
+    }
+
+    /* Portfolio: about teaser */
+
+    #about-me-section .photo-wrap {
+        width: 400px;
+    }
+
+    .about-teaser p {
+        border-width: 6px;
+    }
 }
 
 /* ---------- Large Monitors (2560px+) ---------- */
@@ -2031,5 +2628,205 @@ hr {
     #contact-cartoon {
         border-width: 24px;
         max-width: 300px;
+    }
+
+    /* Portfolio: hero */
+
+    .hero {
+        border-width: 16px;
+    }
+
+    .hero-art .photo-wrap {
+        width: 520px;
+    }
+
+    /* Portfolio: about teaser */
+
+    #about-me-section .photo-wrap {
+        width: 520px;
+    }
+
+    .about-teaser p {
+        border-width: 8px;
+    }
+}
+
+/* ---------- Portfolio Page (tablet, phone, reduced motion) ----------
+   Keep this at the very end so it overrides the base portfolio rules. */
+
+/* small desktops: tighten the hero so the stickers don't run into the text */
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+
+    .hero {
+        gap: 2.5rem;
+        padding: 2rem 3rem 2rem 2.5rem;
+    }
+
+    .hero-pitch {
+        max-width: 26rem;
+    }
+}
+
+@media (max-width: 1023.98px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.75rem;
+        padding: 2rem 2.5rem 2.25rem; /* even padding now that it's one column */
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-buttons,
+    .hero-stamps {
+        justify-content: center;
+    }
+
+    .hero-art {
+        order: -1;
+    }
+
+    .hero-bubble {
+        max-width: 22rem;
+    }
+
+    .service-grid,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* About teaser: photo on top, text below, button under the text */
+
+    #about-me-section {
+        flex-direction: column;
+        align-items: center;
+        min-height: 0;
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    .about-teaser {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+
+    #about-me-section .photo-wrap {
+        width: clamp(240px, 42vw, 340px);
+    }
+
+    .about-teaser p {
+        width: 100%;
+        max-width: 36rem;
+        padding: 1.5rem;
+    }
+
+    #read-more-button {
+        position: static;
+        transform: none;
+        margin-top: 1.5rem;
+
+    }
+}
+
+@media (max-width: 639.98px) {
+
+    .portfolio-content {
+        border-width: 6px;
+    }
+
+    .portfolio-page {
+        padding: .75rem .5rem 2rem;
+    }
+
+    .hero {
+        padding: 1.25rem 1rem 1.5rem;
+        border-width: 6px;
+        gap: 1.5rem;
+    }
+
+    #portfolio-heading {
+        border-width: 6px;
+        white-space: nowrap;
+        font-size: clamp(1.6rem, 8vw, 2.25rem);
+    }
+
+    /* stickers were getting cut off on small screens */
+    .photo-wrap {
+        width: clamp(180px, 58vw, 240px);
+    }
+
+    .sticker.s1 { left: -4%; }
+    .sticker.s2 { right: -4%; }
+    .sticker.s3 { left: -4%; }
+
+    .project-panel {
+        margin: 4rem .25rem 1.5rem;
+        border-width: 6px;
+    }
+
+    .panel-label {
+        border-width: 5px;
+        font-size: 1.1rem;
+    }
+
+    .service-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .grid-card:nth-child(odd),
+    .grid-card:nth-child(even) {
+        transform: none;
+    }
+
+    /* About teaser */
+
+    #about-me-section {
+        padding: 2.5rem .75rem 1.5rem;
+    }
+
+    #about-me-section .photo-wrap {
+        width: clamp(180px, 58vw, 240px);
+    }
+
+    .about-teaser {
+        gap: 1.75rem;
+    }
+
+    .about-teaser p {
+        padding: 1.1rem;
+        border-width: 4px;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .cta-card {
+        padding: 1.5rem 1rem;
+        transform: none;
+    }
+
+    .btn {
+        padding: .4rem 1rem;
+        border-width: 4px;
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-content {
+        scroll-behavior: auto;
+    }
+
+    .project-panel::before,
+    .availability span,
+    .sparkle-deco {
+        animation: none;
     }
 }
