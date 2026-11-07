@@ -199,7 +199,7 @@ body {
     border: none;
     background-color: transparent;
     padding: 0;
-    margin: 1.25rem 0 0.25rem;
+    margin: 0.85rem 0 0.2rem;
 }
 
 .education-column h3:first-of-type {
@@ -218,8 +218,8 @@ body {
 }
 
 .education-column .list li {
-    margin: 0.4rem 0.25rem;
-    line-height: 1.2;
+    margin: 0.2rem 0.25rem;
+    line-height: 1.15;
     color: var(--dark-purple);
 }
 

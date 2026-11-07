@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Brygetee Al-Shawkani{% endblock %}</title>
+    <title>{% block title %}Brygetee Al-Shawkani | Full-Stack Web Developer{% endblock %}</title>
+    <meta name="description" content="{% block description %}Portfolio of Brygetee Al-Shawkani, a full-stack web developer building Python and Flask web applications.{% endblock %}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 </head>
 <body>
-
     <div class="folder-container">
-        <div class="tabs">
-
-
-            <a href="/portfolio"><button class="tab portfolio"><span id="crayon">🖍</span><span class="tab-label"> Portfolio</span></button></a>
-            <a href="/about"><button class="tab about"><span id="star">☆</span><span class="tab-label"> About</span></button></a>
-            <a href="/contact"><button class="tab contact"><span id="envelope">✉</span><span class="tab-label"> Contact</span></button></a>
+        <nav class="tabs" aria-label="Main">
+            <a class="tab portfolio" href="/portfolio"{% if request.path == '/portfolio' %} aria-current="page"{% endif %}><span id="crayon" aria-hidden="true">🖍</span><span class="tab-label"> Portfolio</span></a>
+            <a class="tab about" href="/about"{% if request.path == '/about' %} aria-current="page"{% endif %}><span id="star" aria-hidden="true">☆</span><span class="tab-label"> About</span></a>
+            <a class="tab contact" href="/contact"{% if request.path == '/contact' %} aria-current="page"{% endif %}><span id="envelope" aria-hidden="true">✉</span><span class="tab-label"> Contact</span></a>
+        </nav>
+        <div class="content {% block content_class %}{% endblock %}">
+            {% block content %}{% endblock %}
         </div>
-
-      <div class="content {% block content_class %}{% endblock %}">
-        {% block content %}{% endblock %}
-      </div>
     </div>
-
-
 </body>
 </html>
