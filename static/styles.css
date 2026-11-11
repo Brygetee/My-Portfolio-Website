@@ -1464,9 +1464,9 @@ hr {
 #read-more-button {
     position: absolute;
     bottom: 5rem;
-    transform: translateX(90%);
-    width: 20%;
-    height: 15%;
+    transform: translateX(60%);
+    width: clamp(150px,50%, 350px);
+    height: auto;
     font-size: clamp(1rem, 2.5vw, 3rem);
 }
 
