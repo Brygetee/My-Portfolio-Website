@@ -14,7 +14,7 @@
 <body>
     <div class="folder-container">
         <nav class="tabs" aria-label="Main">
-            <a class="tab portfolio" href="/portfolio"{% if request.path == '/portfolio' %} aria-current="page"{% endif %}><span id="crayon" aria-hidden="true">🖍</span><span class="tab-label"> Portfolio</span></a>
+            <a class="tab portfolio" href="/"{% if request.path == '/' %} aria-current="page"{% endif %}><span id="crayon" aria-hidden="true">🖍</span><span class="tab-label"> Portfolio</span></a>
             <a class="tab about" href="/about"{% if request.path == '/about' %} aria-current="page"{% endif %}><span id="star" aria-hidden="true">☆</span><span class="tab-label"> About</span></a>
             <a class="tab contact" href="/contact"{% if request.path == '/contact' %} aria-current="page"{% endif %}><span id="envelope" aria-hidden="true">✉</span><span class="tab-label"> Contact</span></a>
         </nav>

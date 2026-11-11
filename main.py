@@ -1,23 +1,23 @@
+
 import os
-import smtplib
-from email.message import EmailMessage
+import resend
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for
 
 load_dotenv()
 
 my_email = os.getenv("MY_EMAIL")
-my_password = os.getenv("MY_PASSWORD")
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 app = Flask(__name__)
 
-if not my_email or not my_password:
-    app.logger.warning("MY_EMAIL or MY_PASSWORD is not set: the contact form cannot send email.")
+if not my_email or not resend.api_key:
+    app.logger.warning("MY_EMAIL or RESEND_API_KEY is not set: the contact form cannot send email.")
 
 
 @app.route("/")
 def home():
-    return redirect(url_for("portfolio"))
+    return render_template("portfolio.html")
 
 
 @app.route("/about")
@@ -30,7 +30,7 @@ def contact():
     if request.method == "POST":
         data = request.form
 
-        # spam prevention: hidden field only bots fill in, prevents spam emailing
+        # Spam prevention: hidden field only bots fill in
         if data.get("website"):
             return redirect(url_for("contact", sent=1))
 
@@ -43,19 +43,16 @@ def contact():
             return render_template("contact.html", msg_sent=False, error=True), 400
 
         try:
-            msg = EmailMessage()
-            msg["Subject"] = f"Contact form submission from: {name}"
-            msg["From"] = my_email
-            msg["To"] = my_email
-            msg["Reply-To"] = email
-            msg.set_content(f"{message}\n\n{name}\n{email}\n{phone}")
+            resend.Emails.send({
+                "from": "Brygetee Portfolio <contact@mail.brygetee.com>",
+                "to": [my_email],
+                "reply_to": email,
+                "subject": f"Contact form submission from: {name}",
+                "text": f"{message}\n\n{name}\n{email}\n{phone}"
+            })
 
-            # timeout so it doesn't hang
-            with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as connection:
-                connection.starttls()
-                connection.login(user=my_email, password=my_password)
-                connection.send_message(msg)
             return redirect(url_for("contact", sent=1))
+
         except Exception:
             app.logger.exception("Email failed")
             return render_template("contact.html", msg_sent=False, error=True), 500
@@ -63,12 +60,5 @@ def contact():
     return render_template("contact.html", msg_sent=request.args.get("sent") == "1")
 
 
-@app.route("/portfolio")
-def portfolio():
-    return render_template("portfolio.html")
-
-
 if __name__ == "__main__":
     app.run(debug=os.getenv("FLASK_DEBUG") == "1", port=int(os.getenv("PORT", 4009)))
-
-
